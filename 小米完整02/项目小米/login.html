@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/login.css" type="text/css">
+</head>
+
+<body>
+	<div id="login">
+    	<div class="login"><h1><a href="#"><img src="images/ligin-logo.jpg" width="60" height="60"></a></h1>
+        <h2>一个账号，玩转所有小米服务！</h2>
+        <p>小米手机，小米网，MIUI米柚。多看阅读，米聊</p>
+        <form>
+        	<input  id="one" type="text" name="" placeholder="邮箱/手机号码/小米账号"><span id="emailError"></span>
+            <input  class="tow" type="password" name="" placeholder="密码">
+            <input class="three" type="submit" name="" value="立即登录">
+        	<div class=" denglu">
+            	<span><a href="#">其他方式登录</a> | <a href="#">忘记密码？</a></span>
+            </div>
+            <a href="register.html"><input class="four" type="button" name="" value="注册小米账号"></a>
+        </form>
+        
+        <p class="p1"><span>简体</span> | 繁体 | English | 常见问题<br>
+小米公司版权所有-京ICP备10046444-京公网安备1101080212535</p>
+        </div>
+        
+    
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    String.prototype.myTrim = function () {
+        return this.replace(/(^\s*|\s*$)/g, "");
+    };
+    var oEmail = document.getElementById("one");
+    var oSpan = document.getElementById("emailError");
+    oEmail.onkeyup = function () {
+        var val = this.value.myTrim();
+        check(val);
+    }
+    function check(val) {
+        var reg =/^(?:\w|\.|-)+@(?:[0-9a-zA-Z-]+)(?:\.[0-9a-zA-z]+){1,2}$/;
+		var reg2=/^1[32478]\d{9}$/;
+        if ((!reg.test(val))&&(!reg2.test(val))){
+            oSpan.innerHTML = "您输入的格式有误！";
+            oSpan.className = "";
+        } else {
+            oSpan.innerHTML = "输入正确！";
+            oSpan.className = "c";
+        }
+    }
+
+
+
+
+
+
+
+</script>

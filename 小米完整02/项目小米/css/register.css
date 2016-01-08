@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+html,body,div,ul,li,p,span,dl,dt,dd,input,h1,h2,h3,img{ margin:0; padding:0}
+ul,li,dl,dt,dd{ list-style: none}
+body{ width:100%; font: 14px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+  font-family: arial, 'Microsoft Yahei', 'Hiragino Sans GB', sans-serif;
+  font-size: 12px;-webkit-user-select:none; background:#F9F9F9}
+a{color: #333; text-decoration: none;}
+a:hover{color:orangered; text-decoration: none}
+#register{ position:absolute; top:0; left:50%; padding-top:50px;margin-left:-480px; width:960px; }
+.register-input{ margin-bottom:40px;width:960px; height:460px; border:1px solid #ccc; border-radius:10px; background:#fff}
+.register-top{ height:99px; border-bottom:1px solid #ccc; margin:0 34px 30px; font-size:22px; font-weight:bold; line-height:99px; text-align:center}
+.register-ccenter-one{ margin-left:315px; float:left; width:330px;margin-bottom:15px; height:40px; border:1px solid #ccc; border-radius:5px; line-height:40px;}
+.register-ccenter-one span{ display:inline-block; width:274px; height:40px; border-right:1px solid #ccc; padding-left:15px;}
+.register-ccenter-one i{ float:right;  width:40px; height:40px; background: url(../images/icon.jpg); cursor:pointer; }
+.label-one{ display:inline-block; width:274px; height:40px;padding-left:15px;}
+.label-one input{ width:274px; height:40px; border:none;}
+.register-bottom{ display:inline-block;margin-left:315px;width:330px; height:40px; margin-bottom:30px;}
+.register-bottom-left{ float:left; padding-left:15px;width:175px; height:40px; border:1px solid #ccc}
+.register-input .change{ margin-left:315px; margin-bottom:30px; width:330px; height:40px; border:1px solid #ccc; border-radius:5px; line-height:40px; background:#FF6F3D; color:#fff}
+.register-input p{ margin-left:315px; color: #999}
+.register-input p span{ color:#000}
+.last{ margin:0 auto; width:355px; height:75px; line-height:20px; text-align:center; color:#999}
+.last span{ color:#000}
+input:focus {
+    outline:none;
+}
+ #emailError {
+            display: inline-block;
+            margin-left: 10px;
+            height:40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #ff0000;
+            font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+			width:160px; float:left;
+			
+        }
+
+        #emailError.c {
+            color: green;
+        }

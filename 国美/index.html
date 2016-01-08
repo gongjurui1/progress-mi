@@ -1,0 +1,3271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>国美在线-国美电器官方网上商城，中国领先专业的综合网购平台，正品低价、快速送达、安心服务!</title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	/*bar---------------------*/
+	$('.li05').hover(function(e){
+		$('.li05').css({background:'#fff url(images/bars.png) no-repeat 65px 12px'});
+		$('.wodeguomei').css('display','block')
+	},function(e){
+		$('.li05').css({background:'#f3f3f3 url(images/bar_r3_c5.png) no-repeat 65px 12px'})
+		$('.wodeguomei').css('display','none')
+	})
+	
+	
+	$('.li07').hover(function(e){
+		$('.li07').css({background:'#fff url(images/bars.png) no-repeat 65px 12px'});
+		$('.wangzhandaohang').css('display','block')
+	},function(e){
+		$('.li07').css({background:'#f3f3f3 url(images/bar_r3_c5.png) no-repeat 65px 12px'})
+		$('.wangzhandaohang').css('display','none')
+	})
+	
+	
+	
+	/*搜索栏--------------------------*/
+	var text=$('.sosuo');
+	text.focus(function(){
+		if(text.val()=='空调扇'){
+			text.val('');
+		}
+	})
+	text.blur(function(){
+		if(text.val()==''){
+			text.val('空调扇')
+		}
+	})
+	/*nav-right---------------------------*/
+	var num=0;
+	function shang_1(){
+		$('.nav_con_r_r_a').stop().animate({top:-num*40},500);
+	}
+	$('.shangjiantou').click(function(){
+		num++;
+		if(num>2){
+			num=0;
+			$('.nav_conr_r_r_a').css({top:0});
+		}
+		shang_1();
+	})
+	$('.xiajiantou').click(function(){
+		num--;
+		if(num<0){
+			num=2;
+			$('.nav_conr_r_r_a').css({top:-80});
+		}
+		shang_1();
+	})
+	/*navmusic----------------------------------*/
+	$('.nav_con_r_l li').mouseenter(function(e) {
+		var num=$(this).index();
+        $(this).children('span').stop().animate({top:0},150);
+		$('audio').eq(num).get(0).load();
+		$('audio').eq(num).get(0).play();
+    }).mouseleave(function(e) {
+         $(this).children('span').stop().animate({top:40},150);
+    });
+	
+	/*banner-------------------------------*/
+	$('.xiabiao li').mouseover(function(){
+		var num01=$(this).index();
+		$(this).addClass('changeback').siblings().removeClass();
+		$('.jiaodiantu li').eq(num01).hide().stop().fadeIn().siblings().hide();
+		num02=num01+1;
+		if(num02==5){
+			num02=0;
+		}
+	})
+	;
+	var timer=setInterval(zidong,2000);
+	var num02 = 1;
+	function zidong(){
+		$('.xiabiao li').eq(num02).addClass('changeback').siblings().removeClass();
+		$('.jiaodiantu li').eq(num02).hide().stop().fadeIn().siblings().hide();
+		num02++;
+		if(num02>4){
+			num02=0;
+		}
+	}
+		$('.banner').hover(function(){
+		clearInterval(timer)
+	},function(){
+		clearInterval(timer)
+		timer=setInterval(zidong,2000)
+	})
+/*youxichongzhi*/
+$('.span1,.span2').mouseover(function(){
+		var num09=$(this).index()
+		$('.spanhong').stop().animate({left:num09*130},500)
+		$(this).css('color','#cc0000').siblings().css('color','#3e3e3e')
+		$('.con1_right_r_x div').eq(num09+1).css('display','block').siblings().css('display','none').eq(0).css('display','block')
+	})
+	/*shuojihao---------------*/
+		var shoujihao=$('.input1');
+	shoujihao.focus(function(){
+		if(shoujihao.val()=='请输入充值号码'){
+			shoujihao.val('');
+		}
+	})
+	shoujihao.blur(function(){
+		if(shoujihao.val()==''){
+			shoujihao.val('请输入充值号码')
+		}
+	})
+	
+	/*bannerdown-------------------------*/
+	$('.li11').hover(function(){
+		$('.li11').css('background','#ccc  url(images/tb_r1_c4.png) no-repeat 10px center')
+		$('.li11').css('opacity','0.5');
+		},function(){
+		$('.li11').css('background','  url(images/tb_r1_c1.png) no-repeat 10px center')
+		})
+	$('.li12').hover(function(){
+		$('.li12').css('background','#ccc  url(images/tb_r1_c5.png) no-repeat 10px center')
+		$('.li12').css('opacity','0.5');
+		},function(){
+		$('.li12').css('background','  url(images/tb_r1_c2.png) no-repeat 10px center')
+		})
+		
+		var num03 = 0;
+		function lunbo(){
+			$('.con1_right_l_d ul').stop().animate({left:-num03*676},500);
+		}
+	$('.li12').click(function(e){
+		num03++;
+		if(num03>4){
+			num03=1;
+			$('.con1_right_l_d ul').css({left:0});
+		}
+		lunbo()
+	})
+	
+	$('.li11').click(function(e) {
+        num03--;
+		if(num03<0){
+			num03=3;
+			$('ul').css({left:-2704})
+		}
+		lunbo()
+	})
+	
+	$('.con1_right_l_d li').mouseover(function(e) {
+		$(this).siblings().stop().fadeTo(500,0.2)
+    }).mouseout(function(e) {
+		$('.con1_right_l_d li').stop().fadeTo(500,1);
+    });
+	/*daohangtanchu-----------------------*/
+		$('.con1_left_t').hover(function(){
+			$('.fenglei').stop().animate({width:725},200)
+			
+		},function(){
+			$('.fenglei').hide().stop().animate({width:0},0)	
+		})
+	$('.daohangda li').hover(
+		function(e){
+			var suoyin = $(this).index();
+		$(this).css({background:'#fff url(images/navc2.png) no-repeat 10px center'},{border:'1px solid #ccc'}).children().css('color','#cc0000')
+		$('.fenglei').css('box-shadow','1px 1px 5px #f0f0f0')
+		$('.fenglei').eq(suoyin).show();
+		
+	},function(e){
+	$(this).css('background','#b01421 url(images/navc2.png) no-repeat 10px center ');
+	$(this).children().css('color','#f5dddd');
+	
+			$('.fenglei').hide()
+
+	
+	})
+	/*jingxuanhuodong-----------------------*/
+	$('.huadongtiao li').mouseover(function(e){
+		var num=$(this).index();
+		$(this).addClass('bgh').siblings().removeClass();
+		$('.jxhd').stop().animate({left:-num*260})
+	})
+
+	/*1Fxiaobanner-----------------------*/
+	$('.gOpSlider1 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con4_right_down_l .fbyd1').stop().animate({top:-num*216})
+		
+    });
+	/*2Fxiaobanner-------------------------*/
+	$('.gOpSlider2 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con5_right_down_l .fbyd2').stop().animate({top:-num*216})
+    });
+	/*3Fxiaobanner-------------------------*/
+	$('.gOpSlider3 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con6_right_down_l .fbyd3').stop().animate({top:-num*216})
+    });
+	/*4Fxiaobanner-------------------------*/
+	$('.gOpSlider4 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con7_right_down_l .fbyd4').stop().animate({top:-num*216})
+    });
+	/*5Fxiaobanner-------------------------*/
+	$('.gOpSlider5 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con8_right_down_l .fbyd5').stop().animate({top:-num*216})
+    });
+	/*6Fxiaobanner-------------------------*/
+	$('.gOpSlider6 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con9_right_down_l .fbyd6').stop().animate({top:-num*216})
+    });
+	/*7Fxiaobanner-------------------------*/
+	$('.gOpSlider7 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con10_right_down_l .fbyd7').stop().animate({top:-num*216})
+    });
+	/*8Fxiaobanner-------------------------*/
+	$('.gOpSlider8 span').mouseover(function(e) {
+		var num=$(this).index()
+        $(this).addClass('pmoCur').siblings().removeClass();
+		$('.con11_right_down_l .fbyd8').stop().animate({top:-num*216})
+    });
+	/*1Fleftpic------------------------*/
+	$('.g_floor_lpic a').hover(function(){
+		$(this).stop().animate({marginLeft:-30},300).css('opacity','1');
+	},function(){
+		$(this).stop().animate({marginLeft:0},300).css('opacity','0.5');
+	})
+})
+</script>
+</head>
+
+<body>
+<div id="top_ad"><a href="#"><img src="images/926dt_001.jpg" width="1200" height="40" /></a>
+</div>
+<div id="bar">
+  <dl>
+		<dt>
+        	<ul>
+        		<li class="li01"><a href="#">手机国美</a></li>
+        		<li class="li02"><a href="#">库巴商城</a></li>
+        	</ul>
+        </dt>
+		<dd>
+        	<ul>
+       		  <li class="li03">国美在线欢迎您！</li>
+       		  <li><a href="#">请登录</a></li>
+       		  <li><a href="#">免费注册</a></li>
+       		  <li class="li04"><a href="#">我的订单</a></li>
+       		  <li class="li05"><a href="#">我的国美</a> <div class="wodeguomei">
+            	<ul>
+            	  <li class="li15">您好，请<a href="#">登录</a></li>
+            	  <li class="li16">订单提醒：<a href="#">待支付订单</a><a href="#" class="li16a">待评价商品</a></li>
+            	  <li class="li17">优惠券：<a href="#">红券</a><a href="#" class="li17a">蓝券</a><br>
+<a href="#" class="li17b">店铺券</a><a href="#" class="li17c">品牌券</a></li>
+            	</ul>
+            </div></li>
+       		  <li class="li06"><a href="#">国美e站</a></li>
+       		  <li class="li61"><a href="#">在线客服</a></li>
+       		  <li class="li07"><a href="#">网站导航</a><div class="wangzhandaohang">
+            	<ul>
+            		<li class="li18">
+                    	<h4>购物</h4>
+                        <a href="#" class="li18a">商品分类</a>
+                        <a href="#">在线游戏</a>
+                        <a href="#" class="li18b">国美应用汇</a>
+                    </li>
+            		<li class="li19">
+                    	<h4>企业服务</h4>
+                        <a href="#">企业客服</a>
+                        <a href="#" class="li19a">企业采购</a>
+                    </li>
+            		<li class="li20">
+                    	<h4>帮助中心</h4>
+                        <a href="#">新手上路</a>
+                        <a href="#" class="li20a">购物流程</a>
+                        <a href="#">退换货流程</a>
+                        <a href="#" class="li20b">家电维修</a>
+                        <a href="#">监察举报</a>
+                        <a href="#" class="li20c">在线客服</a>
+                    </li>
+            		<li class="li21">
+                    	<h4>客服中心：4008-199-777</h4>
+                    </li>
+            	</ul>
+            </div></li>
+       		  <li><a href="#">企业采购</a></li>
+       		  <li class="li08"><a href="#">商家入驻</a></li>
+        	</ul>
+           
+            
+    </dd>
+	</dl>
+
+</div>
+<div id="header">
+	<h1 class="logo"><a href="#"><img src="images/gomelogo.png" width="200" height="43" /></a><a href="#"><img src="images/logo2.png" width="107" height="42" /></a></h1>
+    <div class="search">
+    	<div class="search_top">
+       	  <div class="search_top_l"><input type="text"  class="sosuo" value="空调扇" /></div>
+          <div class="search_top_r"><input type="image" src="images/search.png" /></div>
+
+      </div>
+   	  <p class="search_down">
+      	热搜：<a href="#" class="current_red">创作品牌日</a> <a href="#">大闸蟹热价</a> <a href="#">名品限时购</a> <a href="#">品牌花洒</a> <a href="#">电脑提前放价</a> <a href="#">商铺排行榜 ></a>
+      </p>
+  </div>
+    <div class="hearder_right">
+    	<div class="shopcar">
+        	<span class="shopcar_l">积分换购6元起</span>
+        	<span class="shopcar_r"><span class="bgshop"></span>&nbsp;<a href="#">购物车空了</a></span>
+        </div>
+    </div>
+</div>
+<div class="nav_con">
+    	<span class="nav_con_l">全部商品分类</span>
+        <div class="nav_con_r">
+       	  <div class="nav_con_r_l">
+            	<ul>
+           		  <li class="index"><a href="#">首页</a><span class="span111"></span></li>
+           		  <li><a href="#">库巴商城</a><span class="span222"></span></li>
+           		  <li><a href="#">促销</a><span class="span333"></span></li>
+           		  <li><a href="#">抢购</a><span class="span444"></span></li>
+           		  <li><a href="#">国美团</a><span class="span555"></span></li>
+           		  <li><a href="#">服装城</a><span class="span666"></span></li>
+           		  <li><a href="#">家装城</a><span class="span777"></span></li>
+           		  <li><a href="#">品牌街</a><span class="span888"></span></li>
+           		  <li class="nomargin"><a href="#">国之美</a><span class="span999"></span></li>
+            	</ul>
+                    <audio src="music/a1.mp3"></audio>
+                    <audio src="music/a2.mp3"></audio>
+                    <audio src="music/a3.mp3"></audio>
+                    <audio src="music/a4.mp3"></audio>
+                    <audio src="music/a5.mp3"></audio>
+                    <audio src="music/a6.mp3"></audio>
+                    <audio src="music/a7.mp3"></audio>
+                    <audio src="music/a8.mp3"></audio>
+                    <audio src="music/a9.mp3"></audio>
+          </div>
+        	<div class="nav_con_r_r">
+            	<div class="nav_con_r_r_a">
+                    <a href="#"><img src="images/923dbyc1.jpg" width="160" height="40" /></a>
+                    <a href="#"><img src="images/924dbyc2.jpg" width="160" height="40" /></a>
+                    <a href="#"><img src="images/925dbyc1.jpg" width="160" height="40" /></a>
+                </div>
+                <div class="anniu">
+                	<a class="shangjiantou"></a>
+                	<a class="xiajiantou"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="con1">
+	<div class="con1_con">
+        <div class="con1_left">
+            <div class="con1_left_t">
+            	
+            	<ul class="daohangda">
+                
+            		<li><a href="#">家具建材</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">家纺寝居</a>、<a href="#">家居日用</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">烹饪锅具</a><span>|</span>
+                            <a href="#">砂锅</a><span>|</span>
+                            <a href="#">煎锅</a><span>|</span>
+                            <a href="#">压力锅</a><span>|</span>
+                            <a href="#">蒸锅</a><span>|</span>
+                            <a href="#">汤锅</a><span>|</span>
+                            <a href="#">奶锅</a><span>|</span>
+                            <a href="#">套锅</a>
+<span>|</span>
+                            <a href="#">煲类</a><span>|</span>
+                            <a href="#">水壶</a>
+<span>|</span>
+							 <a href="#">提锅</a>
+<span>|</span>
+							 <a href="#">炖锅</a>
+<span>|</span>
+							 <a href="#">多用锅</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">数字音乐</a><span>|</span>
+                            <a href="#">刀剪砧板</a><span>|</span>
+                            <a href="#">切片刀/斩切刀</a><span>|</span>
+                            <a href="#">斩骨刀</a><span>|</span>
+                            <a href="#">套刀</a><span>|</span>
+                            <a href="#">多用刀</a><span>|</span>
+                            <a href="#">水果刀</a><span>|</span>
+                            <a href="#">剪刀</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">水具茶杯	</a><span>|</span>
+                            <a href="#">朔料杯</a><span>|</span>
+                            <a href="#">玻璃杯</a><span>|</span>
+                            <a href="#">保温杯</a><span>|</span>
+                            <a href="#">保温壶/桶</a><span>|</span>
+                            <a href="#">茶具	</a><span>|</span>
+                            <a href="#">酒具</a><span>|</span>
+                            <a href="#">咖啡杯</a>
+                        </p>
+      					<p>
+                                <a class="current" href="#">保鲜/收纳</a><span>|</span>
+                            <a href="#">保鲜盒/碗 </a><span>|</span>
+                            <a href="#">保鲜膜/袋</a><span>|</span>
+                            <a href="#">密封罐</a><span>|</span>
+                            <a href="#">油壶</a><span>|</span>
+                            <a href="#">米桶</a><span>|</span>
+                            <a href="#">米箱</a><span>|</span>
+                            <a href="#">置物架</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">精美餐具</a><span>|</span>
+                            <a href="#">盘/碗/碟</a><span>|</span>
+                            <a href="#">餐具套装</a><span>|</span>
+                            <a href="#">刀叉勺筷</a><span>|</span>
+                            <a href="#">一次性餐具</a><span>|</span>
+                            <a href="#">户外餐具</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">厨房小件</a><span>|</span>
+                            <a href="#">铲子/勺子</a><span>|</span>
+                            <a href="#">打蛋器</a><span>|</span>
+                            <a href="#">搅拌碗</a><span>|</span>
+                            <a href="#">隔热手套</a><span>|</span>
+                            <a href="#">磨刀器</a><span>|</span>
+                            <a href="#">蛋糕模具</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/9224fjd4.jpg" width="194" height="70" /></a>
+            <a href="#"><img src="images/9254jd1.jpg" width="194" height="70" /></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">臻丽坊</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">蔻姿</a> <a href="#">澜菲诗</a><br />
+                <a href="#">九州鹿</a> <a href="#">博洋</a><br />
+                <a href="#">博洋</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">怡园</a> <a href="#">博洋</a><br />
+                <a href="#">乐扣乐扣</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">半球</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">炊大师</a> <a href="#">好事达</a><br />
+                <a href="#">方太</a> <a href="#">好事达</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">母婴用品 玩具</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">手机 摄影 数码</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">烹饪锅具</a><span>|</span>
+                            <a href="#">砂锅</a><span>|</span>
+                            <a href="#">煎锅</a><span>|</span>
+                            <a href="#">压力锅</a><span>|</span>
+                            <a href="#">蒸锅</a><span>|</span>
+                            <a href="#">汤锅</a><span>|</span>
+                            <a href="#">奶锅</a><span>|</span>
+                            <a href="#">套锅</a>
+<span>|</span>
+                            <a href="#">煲类</a><span>|</span>
+                            <a href="#">水壶</a>
+<span>|</span>
+							 <a href="#">提锅</a>
+<span>|</span>
+							 <a href="#">炖锅</a>
+<span>|</span>
+							 <a href="#">多用锅</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">数字音乐</a><span>|</span>
+                            <a href="#">刀剪砧板</a><span>|</span>
+                            <a href="#">切片刀/斩切刀</a><span>|</span>
+                            <a href="#">斩骨刀</a><span>|</span>
+                            <a href="#">套刀</a><span>|</span>
+                            <a href="#">多用刀</a><span>|</span>
+                            <a href="#">水果刀</a><span>|</span>
+                            <a href="#">剪刀</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">水具茶杯	</a><span>|</span>
+                            <a href="#">朔料杯</a><span>|</span>
+                            <a href="#">玻璃杯</a><span>|</span>
+                            <a href="#">保温杯</a><span>|</span>
+                            <a href="#">保温壶/桶</a><span>|</span>
+                            <a href="#">茶具	</a><span>|</span>
+                            <a href="#">酒具</a><span>|</span>
+                            <a href="#">咖啡杯</a>
+                        </p>
+      					<p>
+                                <a class="current" href="#">保鲜/收纳</a><span>|</span>
+                            <a href="#">保鲜盒/碗 </a><span>|</span>
+                            <a href="#">保鲜膜/袋</a><span>|</span>
+                            <a href="#">密封罐</a><span>|</span>
+                            <a href="#">油壶</a><span>|</span>
+                            <a href="#">米桶</a><span>|</span>
+                            <a href="#">米箱</a><span>|</span>
+                            <a href="#">置物架</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">精美餐具</a><span>|</span>
+                            <a href="#">盘/碗/碟</a><span>|</span>
+                            <a href="#">餐具套装</a><span>|</span>
+                            <a href="#">刀叉勺筷</a><span>|</span>
+                            <a href="#">一次性餐具</a><span>|</span>
+                            <a href="#">户外餐具</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">厨房小件</a><span>|</span>
+                            <a href="#">铲子/勺子</a><span>|</span>
+                            <a href="#">打蛋器</a><span>|</span>
+                            <a href="#">搅拌碗</a><span>|</span>
+                            <a href="#">隔热手套</a><span>|</span>
+                            <a href="#">磨刀器</a><span>|</span>
+                            <a href="#">蛋糕模具</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/9224fjd4.jpg" width="194" height="70" /></a>
+            <a href="#"><img src="images/9254jd1.jpg" width="194" height="70" /></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">臻丽坊</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">蔻姿</a> <a href="#">澜菲诗</a><br />
+                <a href="#">九州鹿</a> <a href="#">博洋</a><br />
+                <a href="#">博洋</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">怡园</a> <a href="#">博洋</a><br />
+                <a href="#">乐扣乐扣</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">半球</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">炊大师</a> <a href="#">好事达</a><br />
+                <a href="#">方太</a> <a href="#">好事达</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">电脑 办公打印 文仪</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">电视 冰箱 洗衣机 空调</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">烹饪锅具</a><span>|</span>
+                            <a href="#">砂锅</a><span>|</span>
+                            <a href="#">煎锅</a><span>|</span>
+                            <a href="#">压力锅</a><span>|</span>
+                            <a href="#">蒸锅</a><span>|</span>
+                            <a href="#">汤锅</a><span>|</span>
+                            <a href="#">奶锅</a><span>|</span>
+                            <a href="#">套锅</a>
+<span>|</span>
+                            <a href="#">煲类</a><span>|</span>
+                            <a href="#">水壶</a>
+<span>|</span>
+							 <a href="#">提锅</a>
+<span>|</span>
+							 <a href="#">炖锅</a>
+<span>|</span>
+							 <a href="#">多用锅</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">数字音乐</a><span>|</span>
+                            <a href="#">刀剪砧板</a><span>|</span>
+                            <a href="#">切片刀/斩切刀</a><span>|</span>
+                            <a href="#">斩骨刀</a><span>|</span>
+                            <a href="#">套刀</a><span>|</span>
+                            <a href="#">多用刀</a><span>|</span>
+                            <a href="#">水果刀</a><span>|</span>
+                            <a href="#">剪刀</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">水具茶杯	</a><span>|</span>
+                            <a href="#">朔料杯</a><span>|</span>
+                            <a href="#">玻璃杯</a><span>|</span>
+                            <a href="#">保温杯</a><span>|</span>
+                            <a href="#">保温壶/桶</a><span>|</span>
+                            <a href="#">茶具	</a><span>|</span>
+                            <a href="#">酒具</a><span>|</span>
+                            <a href="#">咖啡杯</a>
+                        </p>
+      					<p>
+                                <a class="current" href="#">保鲜/收纳</a><span>|</span>
+                            <a href="#">保鲜盒/碗 </a><span>|</span>
+                            <a href="#">保鲜膜/袋</a><span>|</span>
+                            <a href="#">密封罐</a><span>|</span>
+                            <a href="#">油壶</a><span>|</span>
+                            <a href="#">米桶</a><span>|</span>
+                            <a href="#">米箱</a><span>|</span>
+                            <a href="#">置物架</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">精美餐具</a><span>|</span>
+                            <a href="#">盘/碗/碟</a><span>|</span>
+                            <a href="#">餐具套装</a><span>|</span>
+                            <a href="#">刀叉勺筷</a><span>|</span>
+                            <a href="#">一次性餐具</a><span>|</span>
+                            <a href="#">户外餐具</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">厨房小件</a><span>|</span>
+                            <a href="#">铲子/勺子</a><span>|</span>
+                            <a href="#">打蛋器</a><span>|</span>
+                            <a href="#">搅拌碗</a><span>|</span>
+                            <a href="#">隔热手套</a><span>|</span>
+                            <a href="#">磨刀器</a><span>|</span>
+                            <a href="#">蛋糕模具</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/9224fjd4.jpg" width="194" height="70" /></a>
+            <a href="#"><img src="images/9254jd1.jpg" width="194" height="70" /></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">臻丽坊</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">蔻姿</a> <a href="#">澜菲诗</a><br />
+                <a href="#">九州鹿</a> <a href="#">博洋</a><br />
+                <a href="#">博洋</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">怡园</a> <a href="#">博洋</a><br />
+                <a href="#">乐扣乐扣</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">半球</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">炊大师</a> <a href="#">好事达</a><br />
+                <a href="#">方太</a> <a href="#">好事达</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">生活电器 厨卫电器</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">箱包奢侈</a>、<a href="#">钟表首饰</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">烹饪锅具</a><span>|</span>
+                            <a href="#">砂锅</a><span>|</span>
+                            <a href="#">煎锅</a><span>|</span>
+                            <a href="#">压力锅</a><span>|</span>
+                            <a href="#">蒸锅</a><span>|</span>
+                            <a href="#">汤锅</a><span>|</span>
+                            <a href="#">奶锅</a><span>|</span>
+                            <a href="#">套锅</a>
+<span>|</span>
+                            <a href="#">煲类</a><span>|</span>
+                            <a href="#">水壶</a>
+<span>|</span>
+							 <a href="#">提锅</a>
+<span>|</span>
+							 <a href="#">炖锅</a>
+<span>|</span>
+							 <a href="#">多用锅</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">数字音乐</a><span>|</span>
+                            <a href="#">刀剪砧板</a><span>|</span>
+                            <a href="#">切片刀/斩切刀</a><span>|</span>
+                            <a href="#">斩骨刀</a><span>|</span>
+                            <a href="#">套刀</a><span>|</span>
+                            <a href="#">多用刀</a><span>|</span>
+                            <a href="#">水果刀</a><span>|</span>
+                            <a href="#">剪刀</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">水具茶杯	</a><span>|</span>
+                            <a href="#">朔料杯</a><span>|</span>
+                            <a href="#">玻璃杯</a><span>|</span>
+                            <a href="#">保温杯</a><span>|</span>
+                            <a href="#">保温壶/桶</a><span>|</span>
+                            <a href="#">茶具	</a><span>|</span>
+                            <a href="#">酒具</a><span>|</span>
+                            <a href="#">咖啡杯</a>
+                        </p>
+      					<p>
+                                <a class="current" href="#">保鲜/收纳</a><span>|</span>
+                            <a href="#">保鲜盒/碗 </a><span>|</span>
+                            <a href="#">保鲜膜/袋</a><span>|</span>
+                            <a href="#">密封罐</a><span>|</span>
+                            <a href="#">油壶</a><span>|</span>
+                            <a href="#">米桶</a><span>|</span>
+                            <a href="#">米箱</a><span>|</span>
+                            <a href="#">置物架</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">精美餐具</a><span>|</span>
+                            <a href="#">盘/碗/碟</a><span>|</span>
+                            <a href="#">餐具套装</a><span>|</span>
+                            <a href="#">刀叉勺筷</a><span>|</span>
+                            <a href="#">一次性餐具</a><span>|</span>
+                            <a href="#">户外餐具</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">厨房小件</a><span>|</span>
+                            <a href="#">铲子/勺子</a><span>|</span>
+                            <a href="#">打蛋器</a><span>|</span>
+                            <a href="#">搅拌碗</a><span>|</span>
+                            <a href="#">隔热手套</a><span>|</span>
+                            <a href="#">磨刀器</a><span>|</span>
+                            <a href="#">蛋糕模具</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/9224fjd4.jpg" width="194" height="70" /></a>
+            <a href="#"><img src="images/9254jd1.jpg" width="194" height="70" /></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">臻丽坊</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">蔻姿</a> <a href="#">澜菲诗</a><br />
+                <a href="#">九州鹿</a> <a href="#">博洋</a><br />
+                <a href="#">博洋</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">怡园</a> <a href="#">博洋</a><br />
+                <a href="#">乐扣乐扣</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">半球</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">炊大师</a> <a href="#">好事达</a><br />
+                <a href="#">方太</a> <a href="#">好事达</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">美妆个护</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">食品酒水</a>、<a href="#">健康医疗</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">烹饪锅具</a><span>|</span>
+                            <a href="#">砂锅</a><span>|</span>
+                            <a href="#">煎锅</a><span>|</span>
+                            <a href="#">压力锅</a><span>|</span>
+                            <a href="#">蒸锅</a><span>|</span>
+                            <a href="#">汤锅</a><span>|</span>
+                            <a href="#">奶锅</a><span>|</span>
+                            <a href="#">套锅</a>
+<span>|</span>
+                            <a href="#">煲类</a><span>|</span>
+                            <a href="#">水壶</a>
+<span>|</span>
+							 <a href="#">提锅</a>
+<span>|</span>
+							 <a href="#">炖锅</a>
+<span>|</span>
+							 <a href="#">多用锅</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">数字音乐</a><span>|</span>
+                            <a href="#">刀剪砧板</a><span>|</span>
+                            <a href="#">切片刀/斩切刀</a><span>|</span>
+                            <a href="#">斩骨刀</a><span>|</span>
+                            <a href="#">套刀</a><span>|</span>
+                            <a href="#">多用刀</a><span>|</span>
+                            <a href="#">水果刀</a><span>|</span>
+                            <a href="#">剪刀</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">水具茶杯	</a><span>|</span>
+                            <a href="#">朔料杯</a><span>|</span>
+                            <a href="#">玻璃杯</a><span>|</span>
+                            <a href="#">保温杯</a><span>|</span>
+                            <a href="#">保温壶/桶</a><span>|</span>
+                            <a href="#">茶具	</a><span>|</span>
+                            <a href="#">酒具</a><span>|</span>
+                            <a href="#">咖啡杯</a>
+                        </p>
+      					<p>
+                                <a class="current" href="#">保鲜/收纳</a><span>|</span>
+                            <a href="#">保鲜盒/碗 </a><span>|</span>
+                            <a href="#">保鲜膜/袋</a><span>|</span>
+                            <a href="#">密封罐</a><span>|</span>
+                            <a href="#">油壶</a><span>|</span>
+                            <a href="#">米桶</a><span>|</span>
+                            <a href="#">米箱</a><span>|</span>
+                            <a href="#">置物架</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">精美餐具</a><span>|</span>
+                            <a href="#">盘/碗/碟</a><span>|</span>
+                            <a href="#">餐具套装</a><span>|</span>
+                            <a href="#">刀叉勺筷</a><span>|</span>
+                            <a href="#">一次性餐具</a><span>|</span>
+                            <a href="#">户外餐具</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">厨房小件</a><span>|</span>
+                            <a href="#">铲子/勺子</a><span>|</span>
+                            <a href="#">打蛋器</a><span>|</span>
+                            <a href="#">搅拌碗</a><span>|</span>
+                            <a href="#">隔热手套</a><span>|</span>
+                            <a href="#">磨刀器</a><span>|</span>
+                            <a href="#">蛋糕模具</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/9224fjd4.jpg" width="194" height="70" /></a>
+            <a href="#"><img src="images/9254jd1.jpg" width="194" height="70" /></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">臻丽坊</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">蔻姿</a> <a href="#">澜菲诗</a><br />
+                <a href="#">九州鹿</a> <a href="#">博洋</a><br />
+                <a href="#">博洋</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">怡园</a> <a href="#">博洋</a><br />
+                <a href="#">乐扣乐扣</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">半球</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">炊大师</a> <a href="#">好事达</a><br />
+                <a href="#">方太</a> <a href="#">好事达</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">运动户外</a>、<a href="#">汽车用品</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">服饰鞋帽</a> <a href="#">图书音像</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">烹饪锅具</a><span>|</span>
+                            <a href="#">砂锅</a><span>|</span>
+                            <a href="#">煎锅</a><span>|</span>
+                            <a href="#">压力锅</a><span>|</span>
+                            <a href="#">蒸锅</a><span>|</span>
+                            <a href="#">汤锅</a><span>|</span>
+                            <a href="#">奶锅</a><span>|</span>
+                            <a href="#">套锅</a>
+<span>|</span>
+                            <a href="#">煲类</a><span>|</span>
+                            <a href="#">水壶</a>
+<span>|</span>
+							 <a href="#">提锅</a>
+<span>|</span>
+							 <a href="#">炖锅</a>
+<span>|</span>
+							 <a href="#">多用锅</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">数字音乐</a><span>|</span>
+                            <a href="#">刀剪砧板</a><span>|</span>
+                            <a href="#">切片刀/斩切刀</a><span>|</span>
+                            <a href="#">斩骨刀</a><span>|</span>
+                            <a href="#">套刀</a><span>|</span>
+                            <a href="#">多用刀</a><span>|</span>
+                            <a href="#">水果刀</a><span>|</span>
+                            <a href="#">剪刀</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">水具茶杯	</a><span>|</span>
+                            <a href="#">朔料杯</a><span>|</span>
+                            <a href="#">玻璃杯</a><span>|</span>
+                            <a href="#">保温杯</a><span>|</span>
+                            <a href="#">保温壶/桶</a><span>|</span>
+                            <a href="#">茶具	</a><span>|</span>
+                            <a href="#">酒具</a><span>|</span>
+                            <a href="#">咖啡杯</a>
+                        </p>
+      					<p>
+                                <a class="current" href="#">保鲜/收纳</a><span>|</span>
+                            <a href="#">保鲜盒/碗 </a><span>|</span>
+                            <a href="#">保鲜膜/袋</a><span>|</span>
+                            <a href="#">密封罐</a><span>|</span>
+                            <a href="#">油壶</a><span>|</span>
+                            <a href="#">米桶</a><span>|</span>
+                            <a href="#">米箱</a><span>|</span>
+                            <a href="#">置物架</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">精美餐具</a><span>|</span>
+                            <a href="#">盘/碗/碟</a><span>|</span>
+                            <a href="#">餐具套装</a><span>|</span>
+                            <a href="#">刀叉勺筷</a><span>|</span>
+                            <a href="#">一次性餐具</a><span>|</span>
+                            <a href="#">户外餐具</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">厨房小件</a><span>|</span>
+                            <a href="#">铲子/勺子</a><span>|</span>
+                            <a href="#">打蛋器</a><span>|</span>
+                            <a href="#">搅拌碗</a><span>|</span>
+                            <a href="#">隔热手套</a><span>|</span>
+                            <a href="#">磨刀器</a><span>|</span>
+                            <a href="#">蛋糕模具</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a><span>|</span>
+                            <a href="#">居室清洁</a><span>|</span>
+                            <a href="#">皮具护理</a><span>|</span>
+                            <a href="#">垃圾收纳</a><span>|</span>
+                            <a href="#">防护用品</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/9224fjd4.jpg" width="194" height="70" /></a>
+            <a href="#"><img src="images/9254jd1.jpg" width="194" height="70" /></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">臻丽坊</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">蔻姿</a> <a href="#">澜菲诗</a><br />
+                <a href="#">九州鹿</a> <a href="#">博洋</a><br />
+                <a href="#">博洋</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">怡园</a> <a href="#">博洋</a><br />
+                <a href="#">乐扣乐扣</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">半球</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">炊大师</a> <a href="#">好事达</a><br />
+                <a href="#">方太</a> <a href="#">好事达</a>
+            </p>
+        </div>
+    </div></li>
+                    <li><a href="#">充值</a>、<a href="#">游戏</a>、<a href="#">文化艺术</a><div class="fenglei">
+    				<div class="fll">
+    					<p class="one">
+                        	<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="current" href="#">厨房卫浴</a><span>|</span>
+                            <a href="#">淋浴花洒</a><span>|</span>
+                            <a href="#">水槽</a><span>|</span>
+                            <a href="#">水龙头</a><span>|</span>
+                            <a href="#">卫浴挂件</a><span>|</span>
+                            <a href="#">面盆</a><span>|</span>
+                            <a href="#">卫浴配件</a><span>|</span>
+                            <a href="#">马桶</a>
+<span>|</span>
+                            <a href="#">浴室柜</a><span>|</span>
+                            <a href="#">厨房挂件</a>
+<span>|</span>
+							 <a href="#">浴缸</a>
+<span>|</span>
+							 <a href="#">卫浴用品</a>
+<span>|</span>
+							 <a href="#">其他</a>
+
+
+     				   </p>
+       					<p >
+                            <a class="current" href="#">灯具光源</a><span>|</span>
+                            <a href="#">台灯</a><span>|</span>
+                            <a href="#">节能灯</a><span>|</span>
+                            <a href="#">吸顶灯</a><span>|</span>
+                            <a href="#">应急手电</a><span>|</span>
+                            <a href="#">LED灯</a><span>|</span>
+                            <a href="#">创意灯</a>
+       				   </p>
+                       <p>
+                            <a class="current" href="#">电工电料	</a><span>|</span>
+                            <a href="#">开关</a><span>|</span>
+                            <a href="#">插座</a><span>|</span>
+                            <a href="#">电线</a><span>|</span>
+                            <a href="#">断路器</a><span>|</span>
+                            <a href="#">接线板/插头	</a><span>|</span>
+                            <a href="#">门铃</a><span>|</span>
+                            <a href="#">配电箱</a>
+                      </p>
+      					<p>
+                                <a class="current" href="#">五金/工具</a><span>|</span>
+                            <a href="#">电/气动工具 </a><span>|</span>
+                            <a href="#">手动工具</a><span>|</span>
+                            <a href="#">锁具</a><span>|</span>
+                            <a href="#">仪器仪表</a><span>|</span>
+                            <a href="#">家具五金</a><span>|</span>
+                            <a href="#">拉手</a>
+       					</p>
+       					<p>
+                            <a class="current" href="#">柜子架箱</a><span>|</span>
+                            <a href="#">层架</a><span>|</span>
+                            <a href="#">书柜</a><span>|</span>
+                            <a href="#">衣柜</a><span>|</span>
+                            <a href="#">鞋柜/换板凳</a><span>|</span>
+                            <a href="#">电视柜</a><span>|</span>
+                            <a href="#">茶几</a><span>|</span>
+                            <a href="#">立柜</a>
+        				</p>
+        				<p class="two">
+                            <a class="current" href="#">桌椅凳类</a><span>|</span>
+                            <a href="#">书桌</a><span>|</span>
+                            <a href="#">凳类</a><span>|</span>
+                            <a href="#">电脑椅</a><span>|</span>
+                            <a href="#">折叠/躺椅</a><span>|</span>
+                            <a href="#">餐椅</a><span>|</span>
+                            <a href="#">餐桌</a><span>|</span>
+                            <a href="#">厨房量秤</a><span>|</span>
+                            <a href="#">微波用器具</a><span>|</span>
+                            <a href="#">计量器/量杯/温度计</a><span>|</span>
+                            <a href="#">调味罐</a><span>|</span>
+                            
+                            <a href="#">其他工具</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">办公家具</a><span>|</span>
+                            <a href="#">办公椅</a><span>|</span>
+                            <a href="#">办公桌</a><span>|</span>
+                            <a href="#">文件柜</a><span>|</span>
+                    
+                            <a href="#">保险柜</a><span>|</span>
+                            <a href="#">更衣柜</a><span>|</span>
+                            <a href="#">办公茶几</a><span>|</span>
+                            <a href="#">儿童床类</a><span>|</span>
+                            <a href="#">儿童套装</a><span>|</span>
+                            <a href="#">儿童桌椅</a>
+                        </p>
+                        
+                     	<p class="three">
+                            <a class="current" href="#">吊顶/采暖</a><span>|</span>
+                            <a href="#">厨卫照明</a><span>|</span>
+                            <a href="#">采暖器具</a><span>|</span>
+                            <a href="#">扣板</a><span>|</span>
+                    
+                            <a href="#">地热</a><span>|</span>
+                            <a href="#">炉壁</a><span>|</span>
+                            <a href="#">散热器</a><span>|</span>
+                            <a href="#">换气扇</a><span>|</span>
+                            <a href="#">烤炉</a><span>|</span>
+                            <a href="#">一次性用品</a>
+                        </p>
+                        <p class="three">
+                            <a class="current" href="#">清洁用品</a><span>|</span>
+                            <a href="#">纸品湿巾</a><span>|</span>
+                            <a href="#">驱蚊/除害</a><span>|</span>
+                            <a href="#">清洁工具</a><span>|</span>
+                    
+                            <a href="#">衣物清洁</a>
+                          
+                        </p>
+                            	
+                  </div>
+        <div class="flr">
+        	<span class="span10">
+            <a href="#"><img src="images/1024sjx12.jpg" width="194" height="140"></a>
+            </span>
+            <p>
+            	<strong>推荐品牌</strong><br />
+                <a href="#">埃斯兰德</a> 	<a href="#">格兰迪尔</a><br />
+                <a href="#">欧司朗</a> <a href="#">澜菲诗</a><br />
+                <a href="#">欧琳</a> <a href="#">博洋</a><br />
+                <a href="#">雷士</a> <a href="#">臻丽坊</a> <br />
+                <a href="#">慧乐家</a> <a href="#">罗格朗</a><br />
+                <a href="#">好事达</a> <a href="#">炊大师</a><br />
+                <a href="#">苏泊尔</a> <a href="#">博洋</a><br />
+                <a href="#">菲翔诗</a> <a href="#">家世比</a><br />
+                <a href="#">SNOOKER</a> <a href="#">九州鹿</a>	<br />
+                <a href="#">法恩莎</a> <a href="#">溢彩年华</a><br />
+                <a href="#">赛拓</a> <a href="#">空间大师</a>
+            </p>
+        </div>
+    </div></li>
+            	</ul>
+                <div class="con1_left_d">
+                	<ul class="xiamian">
+                		<li><a href="#">国美应用汇</a> <a href="#">企业大客户</a></li>
+                        <li class="li10"><a href="#">手机客户端</a> <a href="#">帮助中心</a></li>
+                	</ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="con1_right">
+        	<div class="con1_right_l">
+            	<div class="banner">
+               	 	<ul class="jiaodiantu">
+                        <li><a href="#"><img src="images/jiaodian2.jpg" width="740" height="280" /></a></li>
+                        <li><a href="#"><img src="images/924sj6.jpg" width="740" height="280"></a></li>
+                        <li><a href="#"><img src="images/925sj4.jpg" width="740" height="280"></a></li>
+                        <li><a href="#"><img src="images/926sj5.jpg" width="740" height="280"></a></li>
+                        <li><a href="#"><img src="images/jiaodian1.jpg" width="740" height="280"></a></li>
+               	    </ul>
+                        
+                       	<ul class="xiabiao">
+                       		<li>1</li>
+                       		<li>2</li>
+                       		<li>3</li>
+                       		<li>4</li>
+                       		<li>5</li>
+                       	</ul>
+                </div>
+                <div class="con1_right_l_d">
+                	
+                		<div class="li11"></div>							          			<div class="xianshi">
+                       <ul>	
+                		
+                       <li><a href="#"><img src="images/916dianshishouxiao8.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/haixinkongtiao.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/shiyibingxishoujiaoxia1.jpg" width="164" height="165" /></a></li>
+                       <li class="li13"><a href="#"><img src="images/laobanshoujiaoxia4.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/1021sjx4.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/1022sjx1.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/1022sjx6.jpg" width="164" height="165" /></a></li>
+                       <li class="li13"><a href="#"><img src="images/1023sjx5.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/1024sjx4.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/1024sjx10.jpg" width="164" height="165" /></a></li>
+                       <li><a href="#"><img src="images/1024sjx11.jpg" width="164" height="165" /></a></li>
+                       <li class="li13"><a href="#"><img src="images/1024sjx12.jpg" width="164" height="165" /></a></li>
+                        <li><a href="#"><img src="images/1025sjx2.jpg" width="164" height="165" /></a></li>
+                        <li><a href="#"><img src="images/1025sjx9.jpg" width="164" height="165" /></a></li>
+                        <li><a href="#"><img src="images/1022sjx6.jpg" width="164" height="165" /></a></li>
+                        <li class="li13"><a href="#"><img src="images/1024sjx12.jpg" width="164" height="165" /></a></li>
+                        <li><a href="#"><img src="images/916dianshishouxiao8.jpg" width="164" height="165" /></a></li>
+                        <li><a href="#"><img src="images/haixinkongtiao.jpg" width="164" height="165" /></a></li>
+                        <li><a href="#"><img src="images/shiyibingxishoujiaoxia1.jpg" width="164" height="165" /></a></li>
+                        <li class="li13"><a href="#"><img src="images/laobanshoujiaoxia4.jpg" width="164" height="165" /></a></li>
+                        </ul>
+                      	</div>
+                		<div class="li12"></div>
+                	
+                </div>
+          </div>
+        	<div class="con1_right_r">
+              	<div class="con1_right_r_s">
+                	<div class="div1">
+                    	<h3>商城公告</h3>
+                        <span><a href="#">更多 ></a></span>
+             </div>
+                  <dl class="dl1">
+                        	
+                        	<dt>
+                            	<a href="#" class="current">7天7夜  万人抢家电</a><br />
+
+<a href="#">厨卫家装最高减500</a><br />
+<a href="#">半价秒手机也半价</a><br />
+<a href="#">手机下单满20返20</a>
+                            </dt>
+                            <dd>
+                            	<a href="#" class="current">9月27日汕头招商</a><br />
+                                <a href="#">美妆特惠低至3.2折</a><br />
+                                <a href="#">如皋下单区域调整</a><br />
+                                <a href="#">关注易信病苹果SC</a>
+                            </dd>
+                        </dl>
+              </div>
+              	<div class="con1_right_r_z"><a href="#"><img src="images/kehuduanqiangshoujiaoyou.jpg" width="260" height="110" /></a></div>
+              	<div class="con1_right_r_x">
+                	<div class="div2">
+                    	<span class="span1">充值</span>
+                        <span class="span2">游戏</span>					<span class="spanhong"></span>
+                    </div>
+                   <div class="border"> 
+                   <dl class="dl2">
+                    	<dt>
+                        	<span class="span3">手机号：</span>
+                            <span class="span4">面 值：</span>
+                            <span class="span5">售 价：</span>
+                        </dt>
+                    	<dd>
+                        	<span class="span06"><input type="text" value="请输入充值号码"  class="input1"/>支持移动/联通/电信</span>
+                            <span class="span07"><select name="chongzhi" id="chongzhi">
+                            <option value="10元">10元</option>
+                            <option value="20元">20元</option>
+                            <option value="30元">30元</option>
+                            <option value="50元">50元</option>
+                            <option value="100元" selected="selected">100元</option>
+                            <option value="200元">200元</option>
+                            <option value="300元">300元</option>
+                            <option value="500元">500元</option>
+                            </select></span>
+                            <span class="span8">￥98.60-99.60</span>
+                            <span class="span9">
+                            	<span class="span9_left"><a href="#">立即充值</a></span>
+                            	<span class="span9_right"><a href="#">快捷安全低价</a></span>
+                            </span>
+                        </dd>
+                    </dl>
+                    </div>
+                    <div class="border2">
+                    	<dl class="dl3">
+                    		<dt><a href="#"><img src="images/6350222775651228992.jpg" width="70" height="70"></a></dt>
+                    		<dd><a href="#">烈火战神</a></dd>
+                    	</dl>
+                        <dl class="dl4">
+                   		  <dt><a href="#"><img src="images/6350170275646217502.jpg" width="70" height="70"></a></dt>
+                    		<dd><a href="#">街机三国</a></dd>
+                   	  </dl>
+                        <dl class="dl5">
+                   		  <dt><a href="#"><img src="images/6350768998921639622.jpg" width="70" height="70"></a></dt>
+                    		<dd><a href="#">热血海贼王</a></dd>
+                   	  </dl>
+                      <ul>
+                      	<li><a href="#">大侠转</a></li>
+                      	<li><a href="#">热血三国2</a></li>
+                      	<li class="nobd"><a href="#">轩辕变</a></li>
+                      	<li><a href="#">新梦幻之城</a></li>
+                      	<li><a href="#">欧冠足球</a></li>
+                      	<li class="nobd"><a href="#">更多></a></li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="con2">
+	<div class="con2_left">
+   	  <div class="con2_left_top">
+        	<ul class="ul1">
+       		  <li class="current">
+                	时时秒杀
+                </li>
+       		  <li>特惠超值</li>
+       		  <li>人气热卖</li>
+       		  <li>新品精选</li>
+        	</ul>
+      </div>
+        <div class="con2_left_down">
+            <ul class="ul2">
+                <li>
+                	<a href="#"><img src="images/104004676_160.jpg" width="160" height="160" /></a><div class="jiage">
+                    	<span class="qian"></span>
+                        <span class="num">189.00</span>
+                        <span class="hongkuang">3折</span>
+                    </div>
+                    <a href="#" id="a1">汉之亲 特惠羽绒被 高性价比</a>
+
+                    <span class="span10"></span>
+                    <p class="p1">限量300 还剩<span class="span11">266</span><br />
+剩余<span class="span11">9</span>小时<span class="span11">54</span>分<span class="span11">7</span>秒</p>
+                </li>
+                <li>
+                	<a href="#"><img src="images/1000498038_160.jpg" width="160" height="160" /></a><div class="jiage">
+                    	<span class="qian"></span>
+                        <span class="num">699.00</span>
+                        <span class="hongkuang">6.8折</span>
+                    </div>
+                    <a href="#" id="a1">北京     (beijing) 经典系列B06</a>
+
+                    <span class="span10"></span>
+                    <p class="p1">限量100 还剩<span class="span11">98</span><br />
+剩余<span class="span11">9</span>小时<span class="span11">54</span>分<span class="span11">7</span>秒</p>
+                </li>
+                <li>
+                	          	<a href="#"><img src="images/1000508151_160.jpg" width="160" height="160" /></a><div class="jiage">
+                    	<span class="qian"></span>
+                        <span class="num">499.00</span>
+                        <span class="hongkuang">5折</span>
+                    </div>
+                    <a href="#" id="a1">【英国百年洁具品牌】斯诺克</a>
+
+                    <span class="span10"></span>
+                    <p class="p1">限量50 还剩<span class="span11">49</span><br />
+剩余<span class="span11">9</span>小时<span class="span11">54</span>分<span class="span11">7</span>秒</p>
+                </li>
+                <li>
+                	<a href="#"><img src="images/1000447293_160.jpg" width="160" height="160" /></a><div class="jiage">
+                    	<span class="qian"></span>
+                        <span class="num">166.00</span>
+                        <span class="hongkuang">8.1折</span>
+                    </div>
+                    <a href="#" id="a1">【黑晶内胆】营养蒸功夫，多</a>
+
+                    <span class="span10"></span>
+                    <p class="p1">限量50 还剩<span class="span11">41</span><br />
+剩余<span class="span11">9</span>小时<span class="span11">54</span>分<span class="span11">7</span>秒</p>
+                </li>
+                <li class="current">
+                	<a href="#"><img src="images/1000464235_160.jpg" width="160" height="160" /></a><div class="jiage">
+                    	<span class="qian"></span>
+                        <span class="num">999.00</span>
+                        <span class="hongkuang">5.6折</span>
+                    </div>
+                    <a href="#" id="a1">【返券还赠吸尘器】福玛特爆</a>
+
+                    <span class="span10"></span>
+                    <p class="p1">限量12 还剩<span class="span11">12</span><br />
+剩余<span class="span11">9</span>小时<span class="span11">54</span>分<span class="span11">7</span>秒</p>
+                </li>
+            </ul>
+        </div>
+  </div>
+	<div class="con2_right">
+    	<div class="con2_right_top">
+       	  <h4>今日团购</h4>
+            <span><a href="#">更多 ></a></span>
+        </div>
+        <div class="con2_right_down">
+        	<span class="span12"></span>
+        	<span class="span13"></span>
+        <a href="#"><img src="images/123123123.png" width="210" height="155" id="fdtp"/></a> 
+        	<span class="span14"><img src="images/tg.png" width="264" height="85" /></span>
+        </div>
+  </div>
+</div>
+<div id="con3">
+  <div class="con3_left">
+    	<div class="con3_left_top">
+        	<ul class="ul3">
+            	<li class="current">今日爆款</li>
+            	<li>畅销品</li>
+            	<li>今日大牌</li>
+            	<li>惠生活</li>
+          </ul>
+        </div>
+    	<div class="con3_left_down">
+        	<ul class="ul4">
+        		<li><a href="#"><img src="images/1jfbk.jpg" width="185" height="240" /></a></li>
+        		<li><a href="#"><img src="images/2xyjsx.jpg" width="185" height="240" /></a></li>
+        		<li><a href="#"><img src="images/3shishang.jpg" width="185" height="240" /></a></li>
+        		<li><a href="#"><img src="images/4smweidan.jpg" width="185" height="240" /></a></li>
+        		<li class="current"><a href="#"><img src="images/5xiagnbao.jpg" width="185" height="240" /></a></li>
+        	</ul>
+      </div>
+    </div>
+  <div class="con3_right">
+   	<div class="con3_right_top">
+        	<h4>精选活动</h4>
+            <span>更多精彩活动</span>
+        </div>
+   	<div class="con3_right_down">
+    	<ul class="jxhd">
+			<li><a href="#"><img src="images/shenzhoujingxuan1.jpg" width="260" height="240" /></a></li>
+   			 <li><a href="#"><img src="images/jxhd1.jpg" width="260" height="240"></a></li>
+   			 <li><img src="images/jxhd2.jpg" width="260" height="240"></li>
+    		<li><a href="#"><img src="images/jxhd3.jpg" width="260" height="240"></a></li>
+		</ul>
+    
+   	  <ul class="huadongtiao">
+       	<li class="bgh"></li>
+        	<li></li>
+        	<li></li>
+        	<li class="nomargin"></li>
+      </ul>
+    </div>
+  </div>
+    <ul class="con3_down">
+    	<li><a href="#"><img src="images/shenzhoupinpai1.jpg" width="297" height="90" /></a></li>
+    	<li><a href="#"><img src="images/chupingchaojibenpinpai2.jpg" width="297" height="90" /></a></li>
+    	<li><a href="#"><img src="images/doujiangjipinpai3.jpg" width="297" height="90" /></a></li>
+    	<li class="nomargin"><a href="#"><img src="images/qiujijiazhuangjipinpai4.jpg" width="297" height="90" /></a></li>
+    </ul>
+</div>
+
+<div id="con4">
+	<div class="con4_left">
+    	<div class="con4_left_top">1F 通讯电脑数码</div>
+    	<div class="con4_left_down">
+        	<p>
+				<strong><a href="#">手机 对讲机</a></strong><br />
+				<a href="#">移动电源</a><br />
+                <a href="#">蓝牙耳机</a><br />
+                <a href="#">存储卡/读卡器</a><br /><br /><br />
+				<strong><a href="#">数码相机 单反相机</a></strong><br />
+				<a href="#">单电/微单相机</a><br />
+                <a href="#">拍立得</a><br />
+                <a href="#">耳机/耳麦</a><br /><br /><br />
+				<strong><a href="#">平板电脑 笔记本</a></strong><br />
+				<a href="#">台式电脑</a><br />
+                <a href="#">超极本</a><br />
+                <a href="#">投影机</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#" ><img width="100" height="100" src="images/7251f1.jpg"></a>
+	            	<a  href="#" ><img width="100" height="100" src="images/7251f2.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/7251f3.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con4_right">
+    
+    	<div class="con4_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>手机</li>
+        		<li>数码</li>
+        		<li>电脑</li>
+        		<li>OA办公</li>
+        		<li>3C配件</li>
+        	</ul>
+        </div>
+        <div class="con4_right_down">
+        	<div class="con4_right_down_l">
+            	<ul>
+            		<li><a href="#"><img src="images/9221fjdz.jpg" width="184" height="216" /></a></li>
+            		<li class="current">
+                    	<div class="fbyd1"><a href="#"><img src="images/9261fjd3.jpg" width="368" height="216" /></a><a href="#"><img src="images/10121Fjd2.jpg" width="368" height="216" /></a><a href="#"><img src="images/10181Fjd4.jpg" width="368" height="216" /></a><a href="#"><img src="images/10231Fjd4.jpg" width="368" height="216" /></a></div>
+                    <div class="gOpSlider1"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li class="lingwai"><a href="#"><img src="images/9251fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/1000519560_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【精美大礼包】三星旗舰 Note3 创意S Pen 超炫皮纹后壳</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">5399</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000315348_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【娇小身材 轻松无线】摩天手 （mofii） G31无线鼠标</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">29</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/1000488022_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【家用功能卡片】索尼W730数码相机 性价比一流</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">796</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14 lingwai"><a href="#"><img src="images/1000503252_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">华硕（ASUS）X550XI323VC-SL笔记本电脑（i5-3230M 4G</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">3799</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con4_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/821fintel.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/sanxing1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/pingguo1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/lianxiang1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/huipu1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/jianeng1.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/aiguozhe1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/tengda1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/luoji1.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9251flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9261flcy2.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9211flcy3.jpg"></a>
+            </div>
+   
+          </div>
+        </div>
+    </div>
+</div>
+
+<div id="con5">
+	<div class="con5_left">
+    	<div class="con5_left_top">2F 生活厨卫</div>
+    	<div class="con5_left_down">
+        	<p>
+				<strong><a href="#">油烟机 燃气灶</a></strong><br />
+				<a href="#">消毒柜</a><br />
+                <a href="#">燃气热水器</a><br />
+                <a href="#">电热水器</a><br /><br /><br />
+				<strong><a href="#">微波炉 豆浆机</a></strong><br />
+				<a href="#">电磁炉</a><br />
+                <a href="#">电饭煲</a><br />
+                <a href="#">电压力锅</a><br /><br /><br />
+				<strong><a href="#">净水设空气静化器</a></strong><br />
+				<a href="#">吸尘器</a><br />
+                <a href="#">足浴盆</a><br />
+                <a href="#">挂烫机</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/7252f1.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/7252f2.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/7252f3.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con5_right">
+    
+    	<div class="con5_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>厨卫大电</li>
+        		<li>厨房小电</li>
+        		<li>环境电器</li>
+        		<li>个护健康</li>
+        		<li>家具电器</li>
+        	</ul>
+        </div>
+        <div class="con5_right_down">
+        	<div class="con5_right_down_l">
+            	<ul>
+            		<li><a href="#"><img src="images/9232fjdz.jpg" width="184" height="215" /></a></li>
+            		<li class="current">
+                    <div class="fbyd2"><a href="#"><img src="images/9232fjd1.jpg" width="368" height="216" /></a><a href="#"><img src="images/10232Fjd2.jpg" width="368" height="216"></a><a href="#"><img src="images/10232Fjd3.jpg" width="368" height="216"></a><a href="#"><img src="images/10231Fjd4.jpg" width="368" height="216"></a></div>
+                    <div class="gOpSlider2"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li><a href="#"><img src="images/9232fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/1000394136_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【三洋微波炉】旋波技术+组合烧烤，数码显示屏，开门上</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">498</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000480672_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【图书馆级静音标准】方太 烟灶套餐 高效静吸 秒吸油烟</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">4999</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/1000473805_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【独创侧部排水】贝尔莱德蒸汽挂烫机 多档调节</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">218</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/1000499128_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【热销推荐】简洁时尚，冷热一体</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">88</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con5_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/jiuyang1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/gelanshi1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/meidi1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/fangtai1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/822f3fhaier.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/laoban1.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/huadi1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/shuaikang1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/irobot1.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9232flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9232flcy21.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9252flcy31.jpg"></a>
+            </div>
+   
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="con6">
+	<div class="con6_left">
+    	<div class="con6_left_top">3F 家用电器</div>
+    	<div class="con6_left_down">
+        	<p>
+				<strong><a href="#">平板电视 音响</a></strong><br />
+				<a href="#">影音线材</a><br />
+                <a href="#">影院</a><br />
+                <a href="#">电视挂架</a><br /><br /><br />
+				<strong><a href="#">冰箱/冷柜 洗衣机</a></strong><br />
+				<a href="#">冰箱</a><br />
+                <a href="#">滚筒洗衣机</a><br />
+                <a href="#">波轮洗衣机</a><br /><br /><br />
+				<strong><a href="#">空调 壁挂式空调</a></strong><br />
+				<a href="#">柜式空调</a><br />
+                <a href="#">播放器</a><br />
+                <a href="#">智能电视盒</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/7253f1.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/7253f2.jpg"></a>
+
+
+	            	<a  href="#"><img width="100" height="100" src="images/7253f3.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con6_right">
+    
+    	<div class="con6_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>电视</li>
+        		<li>冰箱</li>
+        		<li>洗衣机</li>
+        		<li>空调</li>
+        		<li>影音</li>
+        	</ul>
+        </div>
+        <div class="con6_right_down">
+        	<div class="con6_right_down_l">
+            	<ul>
+            		<li><a href="#"><img src="images/9263fjdz.jpg" width="184" height="215" /></a></li>
+            		<li class="current">
+                    	<div class="fbyd3"><a href="#"><img src="images/9253fjd1.jpg" width="368" height="216" /></a><a href="#"><img src="images/3fbn1.jpg" width="368" height="216"></a><a href="#"><img src="images/3fbn2.jpg" width="368" height="216"></a><a href="#"><img src="images/3fbn3.jpg" width="368" height="216"></a></div>
+                    <div class="gOpSlider3"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li><a href="#"><img src="images/9232fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/1000481198_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【空气净化 静音节能】伊莱克斯 1匹三级能效冷暖定屏空调</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">1799</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000292264_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【高效制冷，魔力保鲜】186L 双门冰箱</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">1339</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/1000515116_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【限时特价来袭！】夏普32英寸LED电视，原装面板</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">1899</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/1000476380_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【简约不平凡】格兰仕6公斤滚筒洗衣机</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">999</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con6_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/724sanyang.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/724suoni.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/724xiapu.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/hisense.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/724kelong.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/822f3fhaier_001.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/911aoma.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/724songxia.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/724yilaikesi.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9241flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9233flcy2.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9153flcy3.jpg"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="con7">
+	<div class="con7_left">
+    	<div class="con7_left_top">4F 家居百货</div>
+    	<div class="con7_left_down">
+        	<p>
+				<strong><a href="#">影音导航 系统清洁</a></strong><br />
+				<a href="#">GPS导航</a><br />
+                <a href="#">机油</a><br />
+                <a href="#">儿童安全座椅</a><br /><br /><br />
+				<strong><a href="#">烹饪锅具 保鲜盒</a></strong><br />
+				<a href="#">炒锅</a><br />
+                <a href="#">层架</a><br />
+                <a href="#">套刀</a><br /><br /><br />
+				<strong><a href="#">床上用品 厨房挂件</a></strong><br />
+				<a href="#">凉席</a><br />
+                <a href="#">床品件套</a><br />
+                <a href="#">台灯</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/8154f1.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/7254f2.jpg"></a>
+
+
+	            	<a  href="#"><img width="100" height="100" src="images/7254f3.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con7_right">
+    
+    	<div class="con7_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>家具日用</li>
+        		<li>家纺寝具</li>
+        		<li>家装建材</li>
+        		<li>精品家具</li>
+        		<li>汽车用品</li>
+        	</ul>
+        </div>
+        <div class="con7_right_down">
+        	<div class="con7_right_down_l">
+            	<ul>
+            		<li><a href="#"><img src="images/9234fjdz.jpg" width="184" height="215" /></a></li>
+            		<li class="current">
+                    	<div class="fbyd4"><a href="#"><img src="images/9254jd1.jpg" width="368" height="216" /></a><a href="#"><img src="images/4fbn1.jpg" width="368" height="216"></a><a href="#"><img src="images/4fbn2.jpg" width="368" height="216"></a><a href="#"><img src="images/4fbn3.jpg" width="368" height="216"></a></div>
+                    <div class="gOpSlider4"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li><a href="#"><img src="images/9194fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/104072986_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">原火 高锂4L高耐热陶瓷汤煲砂锅 陶瓷煲T200</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">69</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000429918_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【减少磨损 卓越保护】美孚速霸2000机油（5W-40/SN级/</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">56</span><span class="jiao">.90</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/1000234720_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">同为（TOWE）AE-WS102/Pro电源遥控插座</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">89</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/1000516087_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">菲澜诗（Filans）14管高纯度加厚无纺布双排6层鞋柜 Fix6</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">89</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con7_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/824fboyangjiafang.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/suboer.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/918shuixing.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/918dod.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/724kele.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/85aisilande.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/923liwai.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/724chuidashi.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/918kepai.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9224flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9194flcy2.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9224flcy31.jpg"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="con8">
+	<div class="con8_left">
+    	<div class="con8_left_top">5F 美妆/母婴</div>
+    	<div class="con8_left_down">
+        	<p>
+				<strong><a href="#">洁面 乳液面霜</a></strong><br />
+				<a href="#">防晒隔离</a><br />
+                <a href="#">眼部护理</a><br />
+                <a href="#">化妆水</a><br /><br /><br />
+				<strong><a href="#">洗发护发 沐浴</a></strong><br />
+				<a href="#">居家清洁</a><br />
+                <a href="#">纤体瘦身</a><br />
+                <a href="#">剃须护理</a><br /><br /><br />
+				<strong><a href="#">奶粉 喂养洗护用品</a></strong><br />
+				<a href="#">尿裤湿巾</a><br />
+                <a href="#">玩具乐器</a><br />
+                <a href="#">妈妈用品</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/meizhuang1.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/meizhuang2.jpg"></a>
+
+
+	            	<a  href="#"><img width="100" height="100" src="images/87muying2.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con8_right">
+    
+    	<div class="con8_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>母婴食品</li>
+        		<li>母婴用品</li>
+        		<li>童装童鞋</li>
+        		<li>美容护肤</li>
+        		<li>个人护理</li>
+        	</ul>
+        </div>
+        <div class="con8_right_down">
+        	<div class="con8_right_down_l">
+			<ul>
+            		<li><a href="#"><img src="images/9225fjdz.jpg" width="184" height="215" /></a></li>
+            		<li class="current">
+                    	<div class="fbyd5"><a href="#"><img src="images/9235fjd1.jpg" width="368" height="216" /></a><a href="#"><img src="images/5fbn1.jpg" width="368" height="216"></a><a href="#"><img src="images/5fbn2.jpg" width="368" height="216"></a><a href="#"><img src="images/5fbn3.jpg" width="368" height="216"></a></div>
+                    <div class="gOpSlider5"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li><a href="#"><img src="images/9225fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/1000514752_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">贝亲IA42婴儿原生护肤套装</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">278</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000221023_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【亲手掌控肌肤问题】雅诗兰黛即时修护特润精华露7ml</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">55</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/103830250_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">荷兰本土美素Friso 婴幼儿奶粉 标准2段（6-10个月）800</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">159</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/102902783_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">温碧泉WETHERM长效保湿补水5件套装</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">98</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+           	 </div>
+       	  <div class="con8_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/819meisu.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/819meizanchen.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819niulan.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/819weida.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/819yashi.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819qianbi.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/819haoqi.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819beiqin.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/823sxlogo.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9225flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9225flcy2.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9225flcy3.jpg"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="con9">
+	<div class="con9_left">
+    	<div class="con9_left_top">6F 食品酒水</div>
+    	<div class="con9_left_down">
+        	<p>
+				<strong><a href="#">白酒 葡萄酒</a></strong><br />
+				<a href="#">洋酒</a><br />
+                <a href="#">啤酒</a><br />
+                <a href="#">饮料/蔬果汁/水</a><br /><br /><br />
+				<strong><a href="#">咖啡 糖果巧克力</a></strong><br />
+				<a href="#">进口休闲食品</a><br />
+                <a href="#">进口冲调饮品</a><br />
+                <a href="#">进口饼干糕点</a><br /><br /><br />
+				<strong><a href="#">其他零食坚果炒货</a></strong><br />
+				<a href="#">食用油</a><br />
+                <a href="#">南北干货</a><br />
+                <a href="#">海鲜水产</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/6flcz2.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/6flcz3.jpg"></a>
+
+
+	            	<a  href="#"><img width="100" height="100" src="images/6flcz1.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con9_right">
+    
+    	<div class="con9_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>酒饮冲调</li>
+        		<li>地方特产</li>
+        		<li>休闲食品</li>
+        		<li>进口食品</li>
+        		<li>粮油生鲜</li>
+        	</ul>
+        </div>
+        <div class="con9_right_down">
+        	<div class="con9_right_down_l">
+            	<ul>
+            		<li><a href="#"><img src="images/986fjdz1.jpg" width="184" height="215" /></a></li>
+            		<li class="current">
+                    	<div class="fbyd6"><a href="#"><img src="images/9256fjd1.jpg" width="368" height="216" /></a><a href="#"><img src="images/6fbn1.jpg" width="368" height="216"></a><a href="#"><img src="images/6fbn2.jpg" width="368" height="216"></a><a href="#"><img src="images/6fbn3.jpg" width="368" height="216"></a></div>
+                    <div class="gOpSlider6"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li><a href="#"><img src="images/9226fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/103999449_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">法国原瓶进口 拉菲传奇波尔多红葡萄酒 双支礼盒装</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">199</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000488842_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【健康美味】北田北田糙米粗卷</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">18</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/103486785_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">无分文 干贝 海产干货248克 厦门特产 纯淡干 瑶柱 扇贝</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">116</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/103937769_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">狮牌 龙井雨前 二级绿茶 中秋 礼盒装 100克</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">49</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con9_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/823maotai3.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/825langjiu1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/823logowuliang1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/823luzhou3.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/823tipo.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/99huiyuan1.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/823yida1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/822oudebao.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/822deyun.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9226flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9246flcy21.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9226flcy3.jpg"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="con10">
+	<div class="con10_left">
+    	<div class="con10_left_top">7F 服饰鞋包</div>
+    	<div class="con10_left_down">
+        	<p>
+				<strong><a href="#">斜挎包 手包</a></strong><br />
+				<a href="#">电脑包</a><br />
+                <a href="#">皮带/礼盒</a><br />
+                <a href="#">登机箱</a><br /><br /><br />
+				<strong><a href="#">时尚品牌瑞士表</a></strong><br />
+				<a href="#">纯金K金饰品</a><br />
+                <a href="#">火机烟具</a><br />
+                <a href="#">工艺礼品</a><br /><br /><br />
+				<strong><a href="#">望远镜 冲锋衣/裤</a></strong><br />
+				<a href="#">羽毛球</a><br />
+                <a href="#">休闲鞋/板鞋</a><br />
+                <a href="#">自行车整车</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/8267fz1.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/8297fzc22.jpg"></a>
+
+	            	<a  href="#"><img width="100" height="100" src="images/8267fz3.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con10_right">
+    
+    	<div class="con10_right_top">
+        	<ul class="ul5">
+        		<li>特价/新品</li>
+        		<li>品牌服装</li>
+        		<li>鞋靴配饰</li>
+        		<li class="current">箱包奢侈</li>
+        		<li>钟表首饰</li>
+        		<li>运动户外</li>
+        	</ul>
+        </div>
+        <div class="con10_right_down">
+        	<div class="con9_right_down_l">
+            	<ul>
+            		<li class="li14"><a href="#"><img src="images/102786330_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">CARTELO卡帝乐鳄鱼 苹果IP AD2/3/4 保护套</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">59</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/102079115_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">卓凡尼·华伦天奴英式格仔纹织物配PVC男士斜跨日字包811</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">299</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/104119176_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">牛皮虔诚油画手提包复古欧美潮斜跨撞色2013贝壳包新款</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">295</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/104080788_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">DILABES 2013年秋冬新款 国美首发 欧美简约风 豹纹潮酷</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">99</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/103398188_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">爱华仕箱包双肩包背包电脑包运动包韩版旅行包书包商务包  </a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">99</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/104030696_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">法国LEXIN乐上LN1065立式单间电脑侧背包</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">590</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/103652979_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">泊克行者blomberg砖石升级版拉杆箱</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">219</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/20130117144236861_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">亚洲豹（ASIAPARRD）万向轮尼龙旅行拉杆箱9083</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">268</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con10_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/724naike.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/825tiansuo1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/825hongdou1.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/826zippo.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/825yibo1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819waijiaoguan.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/825gongyang1.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819daiyu.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/826leipeng2.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9177flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9227flcy2.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9227flcy31.jpg"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div id="con11">
+	<div class="con11_left">
+    	<div class="con11_left_top">8F 运动健康</div>
+    	<div class="con11_left_down">
+        	<p>
+				<strong><a href="#">蛋白粉 高丽参</a></strong><br />
+				<a href="#">膳食纤维</a><br />
+                <a href="#">枸杞</a><br />
+                <a href="#">复合维生素</a><br /><br /><br />
+				<strong><a href="#">血压计 血糖测量</a></strong><br />
+				<a href="#">助听器</a><br />
+                <a href="#">制氧机</a><br />
+                <a href="#">雾化器</a><br /><br /><br />
+				<strong><a href="#">情爱玩具 人体润滑</a></strong><br />
+				<a href="#">验孕测孕</a><br />
+                <a href="#">安全避孕</a><br />
+                <a href="#">两性护理</a><br />
+
+
+            </p>
+            <div class="g_floor_lpic">
+	            	<a href="#"><img width="100" height="100" src="images/8198fz2.jpg"></a>
+	            	<a  href="#"><img width="100" height="100" src="images/8198fz1.jpg"></a>
+
+
+	            	<a  href="#"><img width="100" height="100" src="images/8198fz3.jpg"></a>
+            </div>
+        </div>
+    </div>
+	<div class="con11_right">
+    
+    	<div class="con11_right_top">
+        	<ul class="ul5">
+        		<li class="current">特价/新品</li>
+        		<li>医疗健康</li>
+        		<li>成人用品</li>
+        		<li>营养保健</li>
+        		<li>传统补滋</li>
+        		<li>运动器材</li>
+        	</ul>
+        </div>
+        <div class="con11_right_down">
+        	<div class="con11_right_down_l">
+            	<ul>
+            		<li><a href="#"><img src="images/9158fjdz.jpg" width="184" height="215" /></a></li>
+            		<li class="current"><div class="fbyd8">
+                    <a href="#"><img src="images/9228fjd2.jpg" width="368" height="216" /></a><a href="#"><img src="images/con1101.jpg" width="368" height="216"></a><a href="#"><img src="images/con1102.jpg" width="368" height="216"></a><a href="#"><img src="images/con1103.jpg" width="368" height="216"></a></div>
+                    <div class="gOpSlider8"><span class="pmoCur"></span><span></span><span></span><span class="nomargin"></span></div>
+                    </li>
+            		<li><a href="#"><img src="images/9228fjdy.jpg" width="184" height="215" /></a></li>
+            		<li class="li14"><a href="#"><img src="images/1000493986_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【全智能加压 只能高清】欧姆龙 电子血压计</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">299</span><span class="jiao">.00</span></span>
+					
+                    </li>
+            		<li class="li14"><a href="#"><img src="images/1000506320_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">【最畅销组合】杰士邦安全套组合 超值实惠 安全可靠</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">69</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="li14">
+                    <a href="#"><img src="images/1000498221_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">自然之宝Mega Soy大豆卵磷脂软胶囊（美国原装进口）</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">119</span><span class="jiao">.00</span></span>
+                    </li>
+            		<li class="current2 li14"><a href="#"><img src="images/101825809_130.jpg" width="130" height="130" /></a>
+                    <span class="descr"><a href="#">红双喜（DHS） 1012铝合金对装羽毛球拍（已穿线）</a></span>
+                    <span class="price"><span class="rmb">¥</span><span class="yuan">49</span><span class="jiao">.00</span></span>
+                    </li>
+            	</ul>
+            </div>
+       	  <div class="con11_right_down_r">
+          	<div class="pplogo">
+            		<a  href="#"><img width="80" height="40" src="images/819xirui.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/819ziran.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819kangbite.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/819oml.jpg"></a>
+            		<a href="#"><img width="80" height="40"  src="images/724luoshi.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/819kangzhu.jpg"></a>
+            		<a  href="#"><img width="80" height="40"  src="images/910duleisi.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/724gangben.jpg"></a>
+            		<a href="#"><img width="80" height="40" src="images/822jieshibang.jpg"></a>
+            </div>
+            <div class="cxList">
+	                    <a href="#"><img width="260" height="95" src="images/9258flcy1.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9258flcy2.jpg"></a>
+	                    <a href="#"><img width="260" height="95" src="images/9198flcy3.jpg"></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+	<div class="yijian"><a href="#">国美在线首页改版意见</a></div>
+    <div class="ft_top">
+    	<ul>
+    		<li><span class="xiangzhengpin"></span>  &nbsp;&nbsp;享正品 有保障</li>
+    		<li><span class="xinfuwu"></span>&nbsp;&nbsp;心服务 新体验</li>
+    		<li><span class="zhongleiquan"></span>&nbsp;&nbsp;种类全 配送广</li>
+    	</ul>
+    </div>
+    <div class="xinshouzhinan">
+    	<ul>
+    		<li class="biaoti"><a href="#">新手指南</a></li>
+    		<li><a href="#">新手入门</a></li>
+    		<li><a href="#">购买流程</a></li>
+    		<li><a href="#">购物保障</a></li>
+    		<li><a href="#">团购帮助</a></li>
+    		<li><a href="#">自助服务</a></li>
+    	</ul>
+        <ul>
+    		<li class="biaoti"><a href="#">安全支付</a></li>
+    		<li><a href="#">在线支付</a></li>
+    		<li><a href="#">个人账户</a></li>
+    		<li><a href="#">汇款及转账</a></li>
+    		<li><a href="#">分期付款</a></li>
+            <li><a href="#">货到付款</a></li>
+
+    	</ul>
+        <ul>
+    		<li class="biaoti"><a href="#">配送流程</a></li>
+    		<li><a href="#">门店自提</a></li>
+    		<li><a href="#">签收与验货</a></li>
+    		<li><a href="#">小件商品配送表</a></li>
+    		<li><a href="#">大件商品配送表</a></li>
+    		<li><a href="#">配送说明</a></li>
+            
+    	</ul>
+        <ul>
+    		<li class="biaoti"><a href="#">会员社区</a></li>
+    		<li><a href="#">会员互动</a></li>
+    		<li><a href="#">国美e站</a></li>
+    		<li><a href="#">会员等级</a></li>
+    		<li><a href="#">积分与优惠券</a></li>
+    		<li><a href="#">门店会员操作说明</a></li>
+           
+    	</ul>
+        <ul>
+    		<li class="biaoti"><a href="#">售后服务</a></li>
+    		<li><a href="#">退换货政策</a></li>
+    		<li><a href="#">退换货流程</a></li>
+    		<li><a href="#">退款说明</a></li>
+    		<li><a href="#">发票制度</a></li>
+    		<li><a href="#">价格保护</a></li>
+
+    	</ul>
+        <ul>
+    		<li class="biaoti"><a href="#">特色服务</a></li>
+    		<li><a href="#">家电e管家</a></li>
+    		<li><a href="#">安装指引与说明</a></li>
+    		<li><a href="#">电话订购</a></li>
+    		<li><a href="#">放心搜</a></li>
+                		<li><a href="#">商品专题</a></li>
+
+    	</ul>
+        <ul>
+    		<li class="biaoti"><a href="#">国美集团</a></li>
+    		<li><a href="#">国美简介</a></li>
+    		<li><a href="#">监察举报</a></li>
+    		<li><a href="#">国美招聘</a></li>
+    		<li><a href="#">电商招聘</a></li>
+                		<li><a href="#">对公业务及批里采购</a></li>
+
+    	</ul>
+       
+</div> 
+    <ul class="youqinglianjie">
+        <li><a href="#">商家入驻</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">企业大客户</a></li>
+        <li><a href="#">用户体验改进计划</a></li>
+        <li><a href="#">手机国美</a></li>
+        <li class="nobd"><a href="#">友情链接</a></li>
+        </ul>
+        <p class="qixiawangzhan">
+        国美旗下网站：<a href="#">国美在线</a> <a href="#">库巴商城</a> 国美连锁分布：<select name="area" id="">
+        	<option value="" selected="selected">请选择</option>
+        </select>
+        </p>
+        <span class="xin"></span>
+        <p class="banquan">
+        	&copy;2000-2013国美在线电子商务有限公司版权所有<br />
+<span>许可证号:沪B2-20120004 诚信档案编号:CX20111018000607000618  AAA信用网站信用编码:1568028292</span><br />
+注册号:310114002223585 可信网站编码:2011071100100011373
+        </p>
+        <ul class="beian">
+        	<li class="one"></li>
+        	<li class="two"></li>
+        	<li class="three"></li>
+        </ul>
+</div>
+</body>
+</html>

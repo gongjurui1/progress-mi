@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/register.css" type="text/css">
+</head>
+
+<body>
+<div id="register">
+	<h1><a href="#"><img src="images/n-logo.png" width="112" height="31"></a></h1>
+    <div class="register-input">
+    	<div class="register-top">注册小米账号</div>
+        <div class="register-ccenter-one"><span>中国(+86)</span><i></i></div>
+        <div class="register-ccenter-one">
+        	<label class="label-one">
+            	<input id="one" type="tel" name="" placeholder="请输入手机号码">
+            </label>
+           
+        </div>
+         <span id="emailError"></span>
+
+         <input class="change" type="submit" name="" value="立即注册">
+         <p>点击“立即注册”，即表示您同意并愿意遵守小米<span>用户协议</span>和<span>隐<br>
+私政策</span></p>
+    </div>
+    <div class="last">常见问题<br>
+小米公司版权所有-京ICP备10046444-京公网安备1101080212535
+<span>简体</span>| 繁体| English</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    String.prototype.myTrim = function () {
+        return this.replace(/(^\s*|\s*$)/g, "");
+    };
+    var oEmail = document.getElementById("one");
+    var oSpan = document.getElementById("emailError");
+    oEmail.onkeyup = function () {
+        var val = this.value.myTrim();
+        check(val);
+    }
+    function check(val) {
+   
+		var reg2=/^1[32478]\d{9}$/;
+        if (!reg2.test(val)){
+            oSpan.innerHTML = "您输入的手机格式有误！";
+            oSpan.className = "";
+        } else {
+            oSpan.innerHTML = "输入正确！";
+            oSpan.className = "c";
+        }
+    }
+
+
+
+
+
+
+
+</script>

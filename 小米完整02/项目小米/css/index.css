@@ -1,0 +1,245 @@
+html,body,div,ul,li,p,span,dl,dt,dd,input,h1,h2,h3,img{ margin:0; padding:0}
+ul,li,dl,dt,dd{ list-style: none}
+body{ width:100%; font: 14px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+  font-family: arial, 'Microsoft Yahei', 'Hiragino Sans GB', sans-serif;
+  font-size: 12px;-webkit-user-select:none}
+a{color: #333; text-decoration: none;}
+a:hover{color:orangered; text-decoration: none}
+input:focus {outline:none;}
+img{border:0;}
+/*index header *********************************************************************************/
+#header{ width:100%; height:147px;}
+.header-top{ height:36px; border-bottom:1px solid #DFDFDF; background:#fafafa; color:#8c8c8c}
+.header-top-left{ width:1240px; margin:0 auto; height:30px; padding-top:8px;}
+.header-bottom{ height:104px;}
+.header-ul{ float:left;width:1000px; height:26px; }
+.header-ul .sep,.header-ul-right .sep{ margin-right:11px;margin-left:12px; color:#E7E7E7}
+.header-ul li,.header-ul-right li{float:left; height:16px; line-height: 20px; }
+.header-ul-right li.current{width:56px;}
+.header-ul li a,.header-ul-right li a{display: inline-block; line-height: 20px; height:20px; }
+.header-ul-right{ float:right;width:80px; height:26px; padding-top:1px;}
+.header-ul-right li{ float:left}
+.header-bottom{ height:75px; padding-top:20px; padding-bottom:15px;}
+.header-bottom-center{ width:1240px; margin:0 auto; height:75px}
+.header-bottom-center h1{ float:left; height:75px;}
+.header-bottom-right{ position:relative;float:right; width:560px;height:75px;}
+.header-bottom-right .span-top{ display:inline-block; padding-left:20px;float:right; margin-bottom:19px; height:16px; background: url(../images/naozhong.png) no-repeat; line-height: 16px; color:#8C8C8C;}
+.header-bottom-right input{ float:left; width:353px;height:20px; font-size: 14px;
+    border:1px solid #DFDFDF; margin-top:35px; color:#919191; padding:9px 15px; }
+.header-bottom-right .span-bottom{ float:left; margin-top:35px; width:38px; height:40px; border:1px solid #DFDFDF; border-left:none;
+    background: url(../images/bigjing.jpg) }
+.input-div1{ position:absolute;right:180px;top:45px; height:20px; width:141px; z-index:1}
+.header-bottom-change{ display:none; position:absolute;top:35px; right:0; z-index:2;padding-left:51px;height:61px; width:75px; border:1px solid red;
+    border-bottom:none; background:#fff url(../images/gouwuche-bb.png) no-repeat 33px 14px;color:#FF4A00; line-height:40px; font-size:14px;}
+.input-div1 li{ float:left; padding:1px 3px; text-align: center; margin-right:5px; background:#F3F3F3; color:#000}
+.header-bottom-right-right{ float:left; padding-left:51px; width:76px; height:39px; padding-top:1px;margin-left:10px;font-size:14px;
+    line-height: 40px; color:#000;background: #FFDB3B url(../images/gouwuche.jpg) no-repeat 33px 14px;}
+.gouwu-change{ position:absolute; top:35px;right:0;width:74px; line-height: 39px;height:55px; border:1px solid red;background:#fff  url(../images/gouwuche-bb.png) no-repeat 33px 14px;z-index:5}
+.gouwu-xianshi{ display: none; position:absolute;top:55px; right:-1px; width:332px; height:58px; border:1px solid red; border-top:1px solid #fff; background:#fff; z-index:-1; text-align:center; line-height:58px; color:#ccc}
+/*index header end*********************************************************************************/
+/*index nav*********************************************************************************/
+#nav{ margin:0 auto; width:1240px; height:50px; background:#333333}
+.nav-left{ position:relative; float:left; width:228px; height:50px; background:#FF4A00; font-size: 18px; line-height: 50px;
+    padding-left:20px;color:#fff;}
+/*横向下拉菜单*/
+
+.nav-right{position:relative; float:left; height:50px; width:992px;}
+.nav-right li.sj .detail{ overflow:hidden; position:absolute; top:50px; left:0px; z-index:51; width:992px; height:200px;display:none;
+    background:#fff}
+.nav-right li.sj .detail div{float:left;width:495px; height:200px;border-right:1px solid #ccc; }
+.nav-right li.sj .detail div.one{ float:left; width:330px; height:200px; border-right:1px solid #ccc}
+.nav-right  .a2:hover:before{ content:""; position:absolute; top:45px;left:50%; margin-left:-5px;
+    border-left:5px solid #000; border-right:5px solid #000; border-bottom:5px solid #fff;}
+.nav-right li{float:left;  height:50px; font-size: 18px; line-height: 50px; text-align: center;}
+.nav-right li a{ padding:0;}
+.nav-right li .a1{ position:relative;display: inline-block; color:#fff; padding:0 23px; }
+.nav-right li .a1:hover{ background:#000;}
+
+/*横向下拉菜单*/
+
+.nav-left-left{ position:absolute; top:50px; left:0; width:246px; height:591px; border: 1px solid #ccc; border-top:none; font-family:14px;}
+.nav-left-left li.li-current{ border-bottom:none}
+.nav-left-left li{font-size:12px; position:relative; border-bottom:1px solid #ccc;}
+.nav-left-left li .nav-left-left-one{ height:43px;padding:15px 10px 15px 17px; line-height:21px; border-left:3px solid #FFF}
+.nav-left-left li .nav-left-left-one:hover{ background:#FAFAFA; border-left:3px solid red}
+.nav-left-left li .nav-left-left-one div{ display:inline; font-size:14px;}
+.nav-left-left li .nav-left-left-one>a{ color: #FF4A00; font-size:14px;}
+.nav-left-left li .nav-left-left-one div a{ margin-right:7px;}
+.nav-left-left li .nav-left-float{ height:300px; width:200px;position: absolute;top:0; background:#fff;left:247px; display:none; z-index:99}
+/*index nav end*********************************************************************************/
+
+/*banner*********************************************************************************************/
+#banner{ margin:0 auto; width:1240px; height:592px; margin-bottom:27px;}
+.banner-center{ margin-left:248px;width:992px; height:592px;}
+.banner-center-top{ height:420px; overflow:hidden; position:relative}
+.banner-center-top-width{ width:3968px; height:420px; background:red}
+.banner-center-top-width img{ display:block float:left;}
+.banner-ul{ position:absolute; bottom:15px; right:15px; height:20px; width:190px;}
+.banner-ul li{ float:left; width:28px; height:18px; background:#000; opacity:0.3; text-align: center; line-height:18px; margin-left:10px;color:#fff}
+.banner-ul li.current{opacity:1} 
+.banner-center-bottom{ width:991px; height:170px; border:1px solid #ccc; border-left:none} 
+.banner-center-bottom div{ float:left; width:330px; height:170px; border-right:1px solid #ccc; overflow:hidden}
+.banner-center-bottom div.current{ border-right:none; width:329px}
+/*banner  end*********************************************************************************************/
+/*con*********************************************************************************************/
+#con{ margin:0 auto; width:1240px; height: auto;}
+.con-t{ float:left; width:222px;color: #333;}
+.con-t a{ color: #999}
+.con-t a:hover{ color:#333}
+.con-t h2{ display:inline-block; margin-right:20px; font-weight:100}
+.con-top{ height:33px; width:100%; }
+.con-top-right{ float:right; height:20px;width:59px; padding:3px 1px;}
+.con-top-right-left,.con-top-right-right{ float:left; height:18px; width:28px; border:1px solid #ccc; color:#ccc;text-align:center; line-height:18px;}
+.con-top-right-right{ float:right; border-left:none;}
+.con-top-right-left:hover,.con-top-right-right:hover{ background:#EFEFEF}
+/*.con-top-right span.current{ color:#000}*/
+.con-bottom{ margin:0 auto; width:1239px; height:308px;border:1px solid #ccc; border-right:none; overflow:hidden; margin-bottom:30px;}
+.con-bottom .con-bottom-wid{ width:2480px; height:308px;}
+.con-bottom .con-bottom-big{ float:left; width:308px; height:308px; border-right:1px solid #ccc}
+.con-bottom-bor{ padding:20px 44px 0 44px;border:3px solid  #fff; height:282px; }
+.con-bottom-bor:hover{ border:3px solid  #EEE } 
+.con-bottom-bor h3{ text-align:center; font-size:16px;}
+.con-bottom-bor p{color:#ccc; margin-top:5px; text-align:center;}
+/*con  tow*********************************************************************************************/
+.con-top-right a{ float:right}
+.con-bottom-tow{ margin:0 auto; width:1238px; height:929px; border:1px solid #ccc; margin-bottom:30px;}
+.con-bottom-tow-left{ float:left; width:928px; height:929px;border-right:1px solid #ccc}
+.con-bottom-tow-left-one{ float:left; width:618px; height:309px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; overflow:hidden}
+.con-bottom-tow-left-tow{ float:left;  border-bottom:1px solid #ccc; overflow:hidden}
+.con-bottom-tow-left-tow h3{font-size:14px;  }
+.con-bottom-tow-left-tow span{ display:block;}
+.con-bottom-tow-left-tow img{ margin:10px 30px 0}
+.con-tow-bor{ border:3px solid #fff; padding-top:34px; padding-left:28px;width:274px; height:269px;}
+.con-bottom-tow-left-three{ border-right:1px solid #ccc; overflow:hidden}
+.con-bor{border:3px solid #fff;width:612px; height:303px; overflow:hidden}
+.con-bottom-tow-left-three-left{ float:left; margin-top:25px;}
+.con-tow-four{  float:left; width:307px; height:309px; border-bottom:1px solid #ccc; border-right:1px solid #ccc}
+.con-three-bor{ border:3px solid #fff;padding:5px 5px 0 29px;width:269px; height:134px; }
+.con-four-bor{ border:3px solid #fff; padding:30px 0 0 26px; height:273px; width:275px;}
+.con-four-bor-left{ float:left;}
+.con-tow-six{ border:1px solid #ccc; border-left:none}
+.con-six-left{ float:left;}
+.con-tow-six img,.con-tow-seven img,.con-four-bor img,.con-bottom-tow-left-three img{ float:right}
+.con-six-bor{ border:3px solid #fff; width:278px; height:133px; padding:24px 0 0 26px}
+ .con-bottom-tow-left .current:hover,  .con-bottom-three-left .current:hover{ border:3px solid #EFEFEF;}
+
+.con-tow-five{float:left; width:309px; border-bottom:1px solid #ccc}
+.big-three{ float:left;}
+.con-tow-seven{ float:left; width:310px; height:309px; border-right:1px solid #ccc; border-bottom:1px solid #ccc}
+.con-seven-bor{border:3px solid #fff; width:277px; height:279px; padding:24px 0 0 26px}
+/*con  tow  right*********************************************************************************************/
+.con-right{ float:right; width:309px; height:929px; background:#FAFAFA}
+.con-right-one{ height:100px; border-bottom:1px solid #ccc; padding:13px 30px;}
+.con-right-one .left{ float:left;}
+.con-right-one .left h3{ font-size:16px;}
+.con-right-one a:hover{color:#6F6F6F}
+.con-right-one .right{ float:right}
+.con-right-four{ height:254px; padding:25px 29px 0 29px;border-bottom:1px solid #ccc; font-size:14px;}
+.con-right-four span{ float:right; margin-right:10px;}
+.con-right-four li{ height:46px; line-height:46px; border-bottom:1px solid #ccc}
+.con-right-four li.current,.con-right-four li:hover{ color:orange}
+.con-right-four li.currentt{ border-bottom:none}
+.con-right-five{ height:210px; border-bottom:1px solid #ccc; padding:29px;}
+.con-right-five h3{ font-size:16px; margin-bottom:14px;}
+.con-right-five input{ height:38px; border:1px solid #ccc; color: #666; font-size:14px;padding-left:10px; width:236px; margin-bottom:10px;}
+.con-right-five div.pic{height:38px; border:1px solid #ccc; color: #666; line-height:38px; font-size:14px;padding-left:10px; width:236px; margin-bottom:10px; background:url(../images/sanjiao.jpg) no-repeat 220px center}
+.con-right-five p{ font-size:14px; height:57px; line-height:57px;}
+.con-right-five p span{ font-size:16px;}
+.con-right-five  .chong{font-size:16px;height:40px; background:#DCDFE5; font-size:16px; text-align:center; line-height:40px; color:#fff}
+.con-right-five .mary{ position:relative;height:42px; width:247px;}
+.con-right-five .mary-all{ display:none; position:absolute; left:0; top:0; height:114px; font-size:14px;width:246px;border:1px solid #ccc; background:#fff;}
+.con-right-five .mary-all .mary-center{ height:38px; line-height:38px; padding-left:10px; width:236px;}
+.con-right-five .mary-all .mary-top{ background: url(../images/sanjiao02.png) no-repeat 220px center}
+.con-right-five .mary-all .current{ background:#ccc}
+/*con  tow end*********************************************************************************************/
+/*con  three*********************************************************************************************/
+.con-bottom-three{  margin:0 auto; width:1238px; height:619px; border:1px solid #ccc; margin-bottom:30px;}
+.con-bottom-three-left{ float:left; width:928px; height:619px;border-right:1px solid #ccc}
+.con-three-right{ margin-left:930px;width:308px; heigth:200px;}
+.con-three-right li{ height:72px; border-bottom:1px solid #ccc; line-height:20px; padding:15px 0; padding-right:15px; padding-left:40px; line-height:25px; }
+.con-three-right .ul-li-one{ font-size:24px;padding:0 26px; height:103px}
+.con-three-right .ul-li-one span{ color:orange; line-height:103px;padding-left:15px; font-size:30px}
+.con-three-right li span{ color:orange; font-size:45px; margin-right:10px; margin-top:10px; padding-bottom:5px;}
+.con-three-right li p{ display: inline-block;margin-top:15px;}
+.con-three-right li span.span-color{ color:#3d3d3d}
+.con-three-right li img{ float:right}
+/*con  three end*********************************************************************************************/
+/*con  four*********************************************************************************************/
+.con-four{ margin:0 auto; width:1240px; height:410px;border:1px solid #ccc; margin-bottom:30px;}
+.con-four div{ float:left; width:309px; height:410px; border-right:1px solid #ccc;}
+.con-four div.current{ border-right:none}
+.con-four .con-four-bor0{ border:3px solid #fff; height:372px; width:293px; padding:32px 0 0 10px} 
+.con-four-bor0:hover{border:3px solid #EFEFEF}
+.con-four-bor0 .xingxing{ float:left; margin-top:4px;height:12px; width:65px; background:url(../images/xingxing.jpg)}
+.con-four-bor0 p{ width:200px; margin-bottom:25px;}
+.con-four-bor0 span.shu{ margin:0 6px;}
+.con-four-bor0 img{ margin-left:25px;}
+.con-four-bor0 img.margin{ margin-left:15px;}
+.con-four-bor0 p s{ color:#ccc}
+.con-four-bor0-span{ display:inline-block; position:relative; width:262px; height:36px; background:#F3F3F3; padding:10px; color:#666}
+/*con  four end*********************************************************************************************/
+/*con  five end*********************************************************************************************/
+.con-five-bottom{ margin:0 auto; margin-bottom:30px; width:1240px; height:309px; border:1px solid #ccc; border-right:none}
+.con-five-bottom div{ position: relative;float:left; width:309px; height:309px; border-right:1px solid #ccc; }
+.con-five-bottom .con-four-bor0{ border:3px solid #fff; height:303px; width:293px; padding-left:10px} 
+.con-five-bottom p{margin:20px 0 5px 0;}
+.con-four-bor0 .color{ position: absolute;top:-3px; right:24px;width:70px; height:20px; background:red; line-height:20px; text-align:center; color:#fff}
+.con-five-bottom .con-four-bor0:hover{  border:3px solid #EFEFEF;}
+/*con  five end*********************************************************************************************/
+.con-six-bottom{ }
+/*con  end*********************************************************************************************/
+/*footer*********************************************************************************************/
+#footer{ margin:0 auto; width:100%; height:534px; background:#FAFAFA; }
+.footer{ margin:0 auto; width:1240px; height:157px; }
+.footer li{ float:left; padding-top:47px;width:248px; height:108px; border-bottom:1px solid #ccc}
+.footer li i{ height:30px; width:31px; margin-left:110px; }
+.footer li span{ display:block; text-align:center; font-size:16px;margin-top:15px;}
+.footer li span.mar{margin-top:20px; }
+.footer-bottom{ margin:0 auto; width:1240px;height:198px; border-bottom:1px solid #ccc}
+#footer .footer-bottom-one{ float:left; width:195px; margin-top:43px;}
+.footer-bottom-one-tt{ font-size:16px; color:#000;}
+.footer-bottom-one p{ margin-left:2px; font-size:30px; font-weight:bold;}
+.footer-bottom-one span{ display:inline-block;padding-left:30px; text-align:center; line-height:20px; margin-bottom:15px;}
+.footer-bottom-one a{ display:block;margin:0 auto; text-align:center;color:#fff; line-height:30px; width:120px;background:red}
+.footer-bottom-one li{ height:30px; line-height:30px;}
+.footer-xiaomi{ margin:0 auto; padding-top:36px; width:1240px; heigth:90px;}
+.footer-xiaomi ul{ margin:0 auto;width:787px;}
+.footer-xiaomi ul li{ float:left; }
+.footer-xiaomi p{ text-align:center}
+.footer-xiaomi div{ margin:0 auto; width:600px; height:40px;}
+.footer-xiaomi div div{ float:right; width:400px;heigth:40px; margin-top:10px;}
+.footer-xiaomi div div span{ display:inline-block; padding-left:15px;width:183px; height:38px; line-height:40px; border:1px solid #ccc; background:url(../images/sanjiao.jpg) no-repeat 170px center}
+.footer-xiaomi div div img{ float:left;margin-top:12px; margin-right:10px;}
+
+
+
+/*bannerleft   begin*/
+.nav-left-left  li div.cur-q{background:#FAFAFA; border-left:3px solid red}
+.nav-left-left li .nav-left-float{height:auto;}
+.nav-left-left li .nav-left-float ul li.nlf-top{position:relative; height:50px; border:none; background:#fff;cursor:pointer;}
+.nav-left-left li .nav-left-float ul li{width:200px;float:left;}
+
+.nav-left-left li .nav-left-float ul li span.imgs {margin-left:20px;}
+.nav-left-left li .nav-left-float ul li span{float: left; display:inline-block;width:50px; height:50px; color:black; margin-right:20px;}
+.nav-left-left li .nav-left-float div{padding:18px 0 18px 30px ;background:#ccc;overflow: hidden;}
+
+.nav-left-left li .nav-left-float div ul li{ margin-left:30px; width:247px;height:24px;color:#8C8C8C; list-style-type:disc;cursor:pointer;border:none;}
+.nav-left-left li .nav-left-float div ul li.ps{ margin-left:15px;height:20px;line-height:14px;font-size:14px;color:black;list-style:none;cursor:none;}
+/*bannerleft end*/
+
+.banner-center-top-width {background:none;}
+.contR-l{position:absolute;left:0;top:160px;overflow:hidden;width:40px;height:70px;background: url(../images/icon-slides.png) no-repeat -84px 0 ;cursor:pointer;z-index:50;}
+.contR-l:hover{background: url(../images/icon-slides.png) no-repeat 0 0 ;}
+.contR-r{position:absolute;right:0;top:160px; overflow:hidden;width:40px;height:70px;background:url(../images/icon-slides.png) no-repeat -124px 0 ;cursor:pointer;z-index:50;}
+.contR-r:hover{ background:url(../images/icon-slides.png) no-repeat -42px 0 }
+a{ cursor:pointer;}
+/*bannercentertop*/
+
+/*#con*/
+#con .con-bottom {position:relative;overflow:hidden;}
+#con .con-bottom .con-bottom-wid{position:absolute;left:0;width:2480px;}
+/*nav-right*/
+.nav-right li.true{position:relative;}
+.nav-right li.true div{position:absolute;}
+/*返回顶部***********/
+.fanhui{width:36px; height:65px; background: url(../images/Top.jpg) no-repeat; position:fixed; right:50px; bottom:50px; cursor:pointer; display:none;}
